@@ -116,7 +116,7 @@
                             沈老師的教學設計小工具
                         </h1>
                         <p class="text-xs text-pink-500 font-medium mt-1">
-                            香港小學數學專用 · 規範垂直分數 $\frac{a}{b}$ · 三層分層工作紙與即用簡報
+                            香港小學數學專用 · 規範垂直分數 $\frac{a}{b}$ · 三層分層工作紙與即用簡報[cite: 1]
                         </p>
                     </div>
                 </div>
@@ -307,10 +307,10 @@
                 </div>
             </div>
 
-            <p class="text-xs text-pink-700">涵蓋【初階：多提示基本題】、【中階：由淺入深應用題】及【高階：少提示思考/自擬題目】。</p>
+            <p class="text-xs text-pink-700">涵蓋【初階：多提示基本題】、【中階：由淺入深應用題】及【高階：少提示思考/自擬題目】[cite: 1]。</p>
 
             <button onclick="generateWorksheet()" id="btnPart4" class="cute-btn-primary px-6 py-2.5 rounded-xl font-bold text-xs w-full shadow-md">
-                <i class="fa-solid fa-layer-group mr-1"></i> 生成分層工作紙 (確保所有分數格式為垂直 $\frac{a}{b}$)
+                <i class="fa-solid fa-layer-group mr-1"></i> 生成分層工作紙 (確保所有分數格式為垂直 $\frac{a}{b}$)[cite: 1]
             </button>
 
             <div id="part4ResultContainer" class="hidden space-y-3">
@@ -364,7 +364,7 @@
 
             <div class="text-xs space-y-2 text-slate-600 leading-relaxed">
                 <p>請輸入您的 Google Gemini API Key（AQ 或 AIzaSy 開頭均可，安全儲存於本機）：</p>
-                <input type="password" id="customApiKeyInput" placeholder="貼上您的 API 金鑰..." class="w-full p-2.5 rounded-xl border border-pink-200 text-xs focus:outline-none focus:border-pink-500 bg-pink-50/50">
+                <input type="password" id="customApiKeyInput" placeholder="AQ.Ab8RN6JF0sj1i5vkoJYSsQIWjxCRHAuJKlv7sBidsEt87gJczQ" class="w-full p-2.5 rounded-xl border border-pink-200 text-xs focus:outline-none focus:border-pink-500 bg-pink-50/50">
             </div>
 
             <div id="testResultMsg" class="text-xs p-2 rounded-lg hidden"></div>
@@ -384,7 +384,7 @@
                     <i class="fa-solid fa-share-nodes"></i> 分享給其他老師/學生（免設定）：
                 </p>
                 <p class="text-[11px] text-slate-500 leading-normal">
-                    儲存 Key 後，點擊下方按鈕複製專屬連結。其他人點開連結便會自動套用金鑰，無需再手動設定！
+                    儲存 Key 後，點擊下方按鈕複製專屬連結。其他人點開連結便會自動套用金鑰，無需再手動設定！[cite: 1]
                 </p>
                 <button onclick="copyShareableLink()" class="w-full py-2 bg-purple-100 text-purple-700 hover:bg-purple-200 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 border border-purple-300">
                     <i class="fa-solid fa-link"></i> 複製專屬免設定分享連結
@@ -500,7 +500,7 @@
             }
         }
 
-        // 核心連線測試（更新端點為 gemini-3.6-flash，支援 AQ 金鑰）
+        // 核心連線測試（端點已全面更新為 gemini-3.6-flash，支援 AQ 標頭驗證）
         async function testKeyConnection() {
             const keyToTest = document.getElementById('customApiKeyInput').value.trim() || getEffectiveKey();
             const msgBox = document.getElementById('testResultMsg');
@@ -556,7 +556,7 @@
             reader.readAsDataURL(file);
         }
 
-        // 核心 Gemini API 調用（更新端點為 gemini-3.6-flash）
+        // 核心 Gemini API 調用（端點更新為 gemini-3.6-flash）
         async function callGeminiApi(promptText, imageBase64 = null) {
             if (useMockMode) {
                 await new Promise(r => setTimeout(r, 600));
