@@ -116,7 +116,7 @@
                             沈老師的教學設計小工具
                         </h1>
                         <p class="text-xs text-pink-500 font-medium mt-1">
-                            香港小學數學專用 · 規範垂直分數 $\frac{a}{b}$ · 三層分層工作紙與即用簡報[cite: 1]
+                            香港小學數學專用 · 規範垂直分數 $\frac{a}{b}$ · 三層分層工作紙與即用簡報
                         </p>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                 </div>
                 <div id="part1Result" class="p-4 rounded-xl bg-white border border-pink-200 text-xs leading-relaxed space-y-2"></div>
 
-                <div class="p-3.5 bg-pink-50 border border-pink-200 rounded-xl text-xs text-pink-900 space-y-2">
+                <div class="p-3.5 bg-pink-50 border border-pink-200 rounded-xl text-pink-900 space-y-2 text-xs">
                     <p class="font-bold"><i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> 請核對上方教學目標與重點。若符合課程，請點擊確認進入第二部分：</p>
                     <button onclick="unlockPart2()" class="w-full py-2.5 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition shadow">
                         <i class="fa-solid fa-arrow-down mr-1"></i> 確認重點正確，解鎖第二部分（詳細教學計劃）
@@ -307,10 +307,10 @@
                 </div>
             </div>
 
-            <p class="text-xs text-pink-700">涵蓋【初階：多提示基本題】、【中階：由淺入深應用題】及【高階：少提示思考/自擬題目】[cite: 1]。</p>
+            <p class="text-xs text-pink-700">涵蓋【初階：多提示基本題】、【中階：由淺入深應用題】及【高階：少提示思考/自擬題目】。</p>
 
             <button onclick="generateWorksheet()" id="btnPart4" class="cute-btn-primary px-6 py-2.5 rounded-xl font-bold text-xs w-full shadow-md">
-                <i class="fa-solid fa-layer-group mr-1"></i> 生成分層工作紙 (確保所有分數格式為垂直 $\frac{a}{b}$)[cite: 1]
+                <i class="fa-solid fa-layer-group mr-1"></i> 生成分層工作紙 (確保所有分數格式為垂直 $\frac{a}{b}$)
             </button>
 
             <div id="part4ResultContainer" class="hidden space-y-3">
@@ -384,7 +384,7 @@
                     <i class="fa-solid fa-share-nodes"></i> 分享給其他老師/學生（免設定）：
                 </p>
                 <p class="text-[11px] text-slate-500 leading-normal">
-                    儲存 Key 後，點擊下方按鈕複製專屬連結。其他人點開連結便會自動套用金鑰，無需再手動設定！[cite: 1]
+                    儲存 Key 後，點擊下方按鈕複製專屬連結。其他人點開連結便會自動套用金鑰，無需再手動設定！
                 </p>
                 <button onclick="copyShareableLink()" class="w-full py-2 bg-purple-100 text-purple-700 hover:bg-purple-200 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 border border-purple-300">
                     <i class="fa-solid fa-link"></i> 複製專屬免設定分享連結
@@ -500,7 +500,7 @@
             }
         }
 
-        // 核心連線測試（支援 AQ / AIzaSy 金鑰，雙軌 Header + Query 驗證）
+        // 核心連線測試（更新端點為 gemini-3.6-flash，支援 AQ 金鑰）
         async function testKeyConnection() {
             const keyToTest = document.getElementById('customApiKeyInput').value.trim() || getEffectiveKey();
             const msgBox = document.getElementById('testResultMsg');
@@ -518,7 +518,7 @@
             msgBox.innerText = '正在向 Google 伺服器發送測試請求...';
 
             try {
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(keyToTest)}`;
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${encodeURIComponent(keyToTest)}`;
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -556,7 +556,7 @@
             reader.readAsDataURL(file);
         }
 
-        // 核心 Gemini API 調用（支援 AQ 金鑰格式，以 x-goog-api-key 標頭傳遞）
+        // 核心 Gemini API 調用（更新端點為 gemini-3.6-flash）
         async function callGeminiApi(promptText, imageBase64 = null) {
             if (useMockMode) {
                 await new Promise(r => setTimeout(r, 600));
@@ -569,7 +569,7 @@
                 throw new Error("請先點擊上方「連線設定」填入 API Key，或開啟離線示範模式！");
             }
 
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(activeKey)}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${encodeURIComponent(activeKey)}`;
 
             const parts = [];
             if (promptText) parts.push({ text: promptText });
