@@ -84,13 +84,13 @@
                 <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl shrink-0">🌸</div>
                 <div>
                     <h1 class="text-xl font-black text-pink-700">沈老師的教學設計小工具</h1>
-                    <p class="text-xs text-pink-500 mt-0.5">香港小學數學分步備課助手 · 規範垂直分數 $\frac{a}{b}$ 格式</p>
+                    <p class="text-xs text-pink-500 mt-0.5">香港小學數學分步備課助手 · 支援 AQ 驗證金鑰架構</p>
                 </div>
             </div>
             <div class="flex items-center gap-2">
                 <div class="px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm">
-                    <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                    <span>API Key 已內建就緒</span>
+                    <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                    <span>AQ 驗證金鑰已內建 ✅</span>
                 </div>
             </div>
         </header>
@@ -127,7 +127,7 @@
                 <span class="w-7 h-7 rounded-full bg-pink-500 text-white font-bold flex items-center justify-center text-xs">1</span>
                 <div>
                     <h2 class="text-base font-bold text-pink-800">步驟一：設定年級與數學課題</h2>
-                    <p class="text-[11px] text-pink-500">輸入香港小學數學課程課題，為後續教材建立指引方向。</p>
+                    <p class="text-[11px] text-pink-500">輸入香港小學數學課程課題，開始專屬教學材料生成。</p>
                 </div>
             </div>
 
@@ -265,8 +265,8 @@
     </div>
 
     <script>
-        // 內建您的專屬 API 金鑰
-        const BUILTIN_KEY = "AQ.Ab8RN6JF0sj1i5vkoJYSsQIWjxCRHAuJKlv7sBidsEt87gJczQ";
+        // 內建您的專屬 AQ 驗證金鑰
+        const BUILTIN_AQ_KEY = "AQ.Ab8RN6JF0sj1i5vkoJYSsQIWjxCRHAuJKlv7sBidsEt87gJczQ";
 
         let analysisCache = "";
         let lessonPlanCache = "";
@@ -278,18 +278,16 @@
 2. 乘號使用 $\\times$，除號使用 $\\div$。
 3. 語氣專業、貼近香港小學課堂實際教學語言。`;
 
-        function getActiveKey() {
-            return BUILTIN_KEY;
-        }
-
+        // 核心調用：採用 AQ 驗證金鑰專屬雙重驗證 Header
         async function callGemini(promptText) {
-            const activeKey = getActiveKey();
+            const endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent";
 
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${encodeURIComponent(activeKey)}`, {
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-goog-api-key': activeKey
+                    'Authorization': `Bearer ${BUILTIN_AQ_KEY}`,
+                    'x-goog-api-key': BUILTIN_AQ_KEY
                 },
                 body: JSON.stringify({
                     contents: [{ parts: [{ text: promptText }] }],
