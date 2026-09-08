@@ -88,10 +88,10 @@
                 </div>
             </div>
             <div class="flex items-center gap-2">
-                <button onclick="toggleKeyModal()" class="px-3 py-2 bg-pink-50 border border-pink-200 text-pink-700 rounded-xl text-xs font-bold hover:bg-pink-100 flex items-center gap-1.5 shadow-sm">
-                    <i class="fa-solid fa-key text-pink-500"></i>
-                    <span id="keyStatusLabel">連線設定</span>
-                </button>
+                <div class="px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                    <span>API Key 已內建就緒</span>
+                </div>
             </div>
         </header>
 
@@ -145,7 +145,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-pink-800 mb-1.5">數學課題名稱</label>
-                    <input type="text" id="topicInput" value="同分母分數加法" placeholder="例如：平行線、小數乘法、三角形面積" class="w-full p-2.5 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-500 bg-white text-xs font-medium">
+                    <input type="text" id="topicInput" value="平行線" placeholder="例如：平行線、同分母分數加法、三角形面積" class="w-full p-2.5 rounded-xl border border-pink-200 focus:outline-none focus:border-pink-500 bg-white text-xs font-medium">
                 </div>
             </div>
 
@@ -194,11 +194,10 @@
 
             <div id="resultStep3" class="p-4 rounded-xl bg-white border border-pink-100 text-xs leading-relaxed space-y-2.5 max-h-[380px] overflow-y-auto"></div>
 
-            <!-- 與 AI 共同微調教案 -->
             <div class="p-3 bg-purple-50 rounded-xl border border-purple-200 space-y-2">
                 <label class="block text-xs font-bold text-purple-800">微調教案（可選）：</label>
                 <div class="flex gap-2">
-                    <input type="text" id="reviseLessonInput" placeholder="例如：加強具體教具操作、加入小組討論任務..." class="flex-1 p-2 rounded-xl border border-purple-200 text-xs focus:outline-none bg-white">
+                    <input type="text" id="reviseLessonInput" placeholder="例如：加強直尺滑動操作步驟、加入小組討論任務..." class="flex-1 p-2 rounded-xl border border-purple-200 text-xs focus:outline-none bg-white">
                     <button onclick="reviseLesson()" id="btnRevise" class="px-4 py-2 bg-purple-600 text-white rounded-xl text-xs font-bold hover:bg-purple-700 shrink-0">修訂教案</button>
                 </div>
             </div>
@@ -218,7 +217,7 @@
                     <span class="w-7 h-7 rounded-full bg-pink-500 text-white font-bold flex items-center justify-center text-xs">4</span>
                     <div>
                         <h2 class="text-base font-bold text-pink-800">步驟四：三層分層工作紙設計</h2>
-                        <p class="text-[11px] text-pink-500">包含【初階：鞏固提示題】、【中階：進階情境題】與【高階：思維自擬題】。</p>
+                        <p class="text-[11px] text-pink-500">包含【初階：基礎鞏固題】、【中階：進階應用題】與【高階：思維挑戰/自擬題】。</p>
                     </div>
                 </div>
                 <div class="flex gap-2">
@@ -244,7 +243,7 @@
                     <span class="w-7 h-7 rounded-full bg-pink-500 text-white font-bold flex items-center justify-center text-xs">5</span>
                     <div>
                         <h2 class="text-base font-bold text-pink-800">步驟五：延伸任務與溫習筆記頁</h2>
-                        <p class="text-[11px] text-pink-500">適合派發予學生進行課後溫習、易錯點自查與家庭探究任務。</p>
+                        <p class="text-[11px] text-pink-500">適合派發予學生進行課後自主學習、易錯點自查與家庭探究。</p>
                     </div>
                 </div>
                 <div class="flex gap-2">
@@ -265,27 +264,10 @@
 
     </div>
 
-    <!-- API 金鑰設定彈窗 -->
-    <div id="keyModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="cute-card bg-white p-5 max-w-sm w-full space-y-3 border-2 border-pink-300 shadow-2xl">
-            <div class="flex justify-between items-center border-b border-pink-100 pb-2">
-                <h3 class="text-xs font-bold text-pink-700 flex items-center gap-1.5">
-                    <i class="fa-solid fa-key text-pink-500"></i> API 金鑰管理
-                </h3>
-                <button onclick="toggleKeyModal()" class="text-slate-400 hover:text-slate-600 text-sm">✕</button>
-            </div>
-            <p class="text-[11px] text-slate-500 leading-normal">請輸入 Google AI Studio 取得之 API Key（金鑰將安全儲存於瀏覽器）：</p>
-            <input type="password" id="customApiKeyInput" placeholder="貼上 API 金鑰..." class="w-full p-2 rounded-xl border border-pink-200 text-xs focus:outline-none bg-pink-50/50">
-            <div id="testResultMsg" class="text-xs p-2 rounded-lg hidden"></div>
-            <div class="flex gap-2">
-                <button onclick="testKeyConnection()" id="btnTestKey" class="flex-1 py-1.5 bg-pink-100 text-pink-700 rounded-xl text-xs font-bold hover:bg-pink-200">🔍 測試</button>
-                <button onclick="saveCustomKey()" class="flex-1 py-1.5 bg-pink-600 text-white rounded-xl text-xs font-bold hover:bg-pink-700">💾 儲存</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        const fallbackKey = "";
+        // 內建您的專屬 API 金鑰
+        const BUILTIN_KEY = "AQ.Ab8RN6JF0sj1i5vkoJYSsQIWjxCRHAuJKlv7sBidsEt87gJczQ";
+
         let analysisCache = "";
         let lessonPlanCache = "";
         let currentStep = 1;
@@ -296,83 +278,12 @@
 2. 乘號使用 $\\times$，除號使用 $\\div$。
 3. 語氣專業、貼近香港小學課堂實際教學語言。`;
 
-        function getEffectiveKey() {
-            const hash = window.location.hash;
-            if (hash && hash.includes('key=')) {
-                const urlKey = hash.split('key=')[1]?.split('&')[0]?.trim();
-                if (urlKey) return decodeURIComponent(urlKey);
-            }
-            const stored = localStorage.getItem('user_gemini_key');
-            if (stored && stored.trim()) return stored.trim();
-            return fallbackKey;
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            if (getEffectiveKey()) {
-                document.getElementById('keyStatusLabel').innerText = 'API Key 已就緒 ✅';
-            }
-        });
-
-        function toggleKeyModal() {
-            document.getElementById('keyModal').classList.toggle('hidden');
-            document.getElementById('customApiKeyInput').value = localStorage.getItem('user_gemini_key') || "";
-            document.getElementById('testResultMsg').classList.add('hidden');
-        }
-
-        function saveCustomKey() {
-            const val = document.getElementById('customApiKeyInput').value.trim();
-            if (val) {
-                localStorage.setItem('user_gemini_key', val);
-                document.getElementById('keyStatusLabel').innerText = 'API Key 已就緒 ✅';
-                alert('API Key 儲存成功！');
-            } else {
-                localStorage.removeItem('user_gemini_key');
-                document.getElementById('keyStatusLabel').innerText = '連線設定';
-            }
-            toggleKeyModal();
-        }
-
-        async function testKeyConnection() {
-            const key = document.getElementById('customApiKeyInput').value.trim() || getEffectiveKey();
-            const msg = document.getElementById('testResultMsg');
-            const btn = document.getElementById('btnTestKey');
-            if (!key) {
-                msg.className = 'text-xs p-2 rounded-lg bg-rose-50 text-rose-700 block';
-                msg.innerText = '請先填入 API Key！';
-                return;
-            }
-            btn.disabled = true;
-            btn.innerText = '測試中...';
-            msg.className = 'text-xs p-2 rounded-lg bg-slate-100 text-slate-700 block';
-            msg.innerText = '正在測試連線...';
-
-            try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${encodeURIComponent(key)}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: "ping" }] }] })
-                });
-                if (!response.ok) {
-                    const err = await response.json().catch(() => ({}));
-                    throw new Error(err.error?.message || `HTTP ${response.status}`);
-                }
-                msg.className = 'text-xs p-2 rounded-lg bg-emerald-50 text-emerald-700 block';
-                msg.innerText = '連線成功！金鑰運作正常。';
-            } catch (e) {
-                msg.className = 'text-xs p-2 rounded-lg bg-rose-50 text-rose-700 block';
-                msg.innerText = `連線失敗：${e.message}`;
-            } finally {
-                btn.disabled = false;
-                btn.innerText = '🔍 測試';
-            }
+        function getActiveKey() {
+            return BUILTIN_KEY;
         }
 
         async function callGemini(promptText) {
-            const activeKey = getEffectiveKey();
-            if (!activeKey) {
-                toggleKeyModal();
-                throw new Error("請先點擊右上角「連線設定」填入 API Key！");
-            }
+            const activeKey = getActiveKey();
 
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${encodeURIComponent(activeKey)}`, {
                 method: 'POST',
@@ -387,8 +298,8 @@
             });
 
             if (!response.ok) {
-                const err = await response.json().catch(() => ({}));
-                throw new Error(err.error?.message || `HTTP ${response.status}`);
+                const errData = await response.json().catch(() => ({}));
+                throw new Error(errData.error?.message || `HTTP ${response.status}`);
             }
 
             const data = await response.json();
@@ -441,7 +352,6 @@
             updateStepTabs(step);
         }
 
-        // 步驟 1 ➔ 生成步驟 2 分析
         async function startStep1() {
             const grade = document.getElementById('gradeSelect').value;
             const topic = document.getElementById('topicInput').value.trim();
@@ -471,14 +381,13 @@
                 document.getElementById('stepTab2').disabled = false;
                 jumpToStep(2);
             } catch (e) {
-                alert(e.message);
+                alert('連線提示：' + e.message);
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i> 確認課題，開始分析教材重點與學生難點';
             }
         }
 
-        // 步驟 2 ➔ 生成步驟 3 教案
         async function goToStep3() {
             const btn = document.getElementById('btnStep2Next');
             btn.disabled = true;
@@ -536,7 +445,6 @@
             }
         }
 
-        // 步驟 3 ➔ 生成步驟 4 工作紙
         async function goToStep4() {
             const btn = document.getElementById('btnStep3Next');
             btn.disabled = true;
@@ -564,7 +472,6 @@
             }
         }
 
-        // 步驟 4 ➔ 生成步驟 5 筆記
         async function goToStep5() {
             const btn = document.getElementById('btnStep4Next');
             btn.disabled = true;
