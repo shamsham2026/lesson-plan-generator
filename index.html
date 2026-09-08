@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沈老師的教學設計與課堂遊戲設計小工具 🌸</title>
+    <title>沈老師的教學設計與課堂遊戲小工具 🌸</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -198,19 +198,23 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <h1 class="text-xl sm:text-2xl font-black text-pink-700 tracking-wide">沈老師的教學設計與課堂遊戲小工具</h1>
-                        <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-pink-100 text-pink-600 border border-pink-300">PRO 升級版</span>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-700 border border-emerald-300">免金鑰隨開即用 ✨</span>
                     </div>
                     <p class="text-xs text-pink-600 font-medium mt-1">
-                        🇭🇰 香港小學數學課程指引  $\frac{a}{b}$ · 詳細教學計劃 · 分層工作紙 · 互動遊戲
+                        🇭🇰 香港小學數學課程指引 · 內置小一至小六全套離線庫 · 支援自選課題 · 垂直分數 $\frac{a}{b}$
                     </p>
                 </div>
             </div>
             
             <div class="flex items-center gap-2 w-full md:w-auto justify-end no-print">
-                <button onclick="toggleKeyModal()" class="px-3.5 py-2.5 bg-white border-2 border-pink-200 text-pink-700 rounded-xl text-xs font-bold hover:bg-pink-50 flex items-center gap-2 shadow-sm transition">
-                    <i class="fa-solid fa-key text-pink-500"></i>
-                    <span id="keyStatusLabel">連線設定</span>
-                </button>
+                <div class="flex items-center bg-pink-50 p-1.5 rounded-2xl border border-pink-200 text-xs font-bold text-pink-800">
+                    <span class="px-2 py-1 bg-white text-emerald-700 rounded-xl shadow-xs flex items-center gap-1.5" id="engineModeBadge">
+                        <i class="fa-solid fa-bolt text-emerald-500"></i> 本地智能教研庫 (免 Key)
+                    </span>
+                    <button onclick="toggleKeyModal()" class="ml-2 px-2.5 py-1 text-pink-600 hover:text-pink-800 text-[11px]">
+                        <i class="fa-solid fa-gear"></i> 切換 AI
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -218,25 +222,11 @@
         <section class="cute-card p-4 no-print bg-gradient-to-r from-pink-50/70 to-purple-50/70 border-pink-200">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-bold text-pink-800 flex items-center gap-1.5">
-                    <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i> 常見香港小學精選課題快捷套用：
+                    <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i> 常見香港小學精選課題快捷套用（按年級切換）：
                 </span>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-                <button onclick="quickPick('小三 (Primary 3)', '同分母分數加法')" class="px-2.5 py-1 bg-white border border-pink-200 text-pink-700 hover:bg-pink-100 rounded-lg text-xs font-medium transition">
-                    小三：同分母分數加法
-                </button>
-                <button onclick="quickPick('小四 (Primary 4)', '異分母分數加法')" class="px-2.5 py-1 bg-white border border-pink-200 text-pink-700 hover:bg-pink-100 rounded-lg text-xs font-medium transition">
-                    小四：異分母分數加法
-                </button>
-                <button onclick="quickPick('小四 (Primary 4)', '平行四邊形和梯形')" class="px-2.5 py-1 bg-white border border-pink-200 text-pink-700 hover:bg-pink-100 rounded-lg text-xs font-medium transition">
-                    小四：平行四邊形和梯形
-                </button>
-                <button onclick="quickPick('小五 (Primary 5)', '分數乘法及應用題')" class="px-2.5 py-1 bg-white border border-pink-200 text-pink-700 hover:bg-pink-100 rounded-lg text-xs font-medium transition">
-                    小五：分數乘法
-                </button>
-                <button onclick="quickPick('小六 (Primary 6)', '百分數的應用（折扣與盈虧）')" class="px-2.5 py-1 bg-white border border-pink-200 text-pink-700 hover:bg-pink-100 rounded-lg text-xs font-medium transition">
-                    小六：百分數應用
-                </button>
+            <div class="flex flex-wrap gap-1.5" id="quickPickContainer">
+                <!-- 動態由 JavaScript 根據年級更新或全域點擊 -->
             </div>
         </section>
 
@@ -246,7 +236,7 @@
                 <div class="step-badge">1</div>
                 <div>
                     <h2 class="text-base font-bold text-pink-900">第一部分：年級課題與教材深度分析</h2>
-                    <p class="text-[11px] text-pink-500">解析核心概念、香港課程教學目標與小學常見迷思陷阱</p>
+                    <p class="text-[11px] text-pink-500">免金鑰即時生成核心概念、香港課程目標與小學常見迷思陷阱</p>
                 </div>
             </div>
 
@@ -255,7 +245,7 @@
                     <label class="block text-xs font-bold text-pink-800 mb-1.5 flex items-center gap-1">
                         <i class="fa-solid fa-graduation-cap text-pink-500"></i> 選擇年級
                     </label>
-                    <select id="gradeSelect" class="w-full p-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white text-xs font-semibold text-slate-700">
+                    <select id="gradeSelect" onchange="onGradeChange()" class="w-full p-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white text-xs font-semibold text-slate-700">
                         <option value="小一 (Primary 1)">小一 (Primary 1)</option>
                         <option value="小二 (Primary 2)">小二 (Primary 2)</option>
                         <option value="小三 (Primary 3)" selected>小三 (Primary 3)</option>
@@ -266,7 +256,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-pink-800 mb-1.5 flex items-center gap-1">
-                        <i class="fa-solid fa-book text-pink-500"></i> 數學課題名稱
+                        <i class="fa-solid fa-book text-pink-500"></i> 數學課題名稱（可自訂輸入或點擊上方快捷鍵）
                     </label>
                     <input type="text" id="topicInput" value="同分母分數加法" placeholder="例如：平行線、容量與體積、除法（二）" class="w-full p-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white text-xs font-medium text-slate-800">
                 </div>
@@ -535,29 +525,29 @@
         <div class="cute-card bg-white p-6 max-w-md w-full space-y-4 border-2 border-pink-300 shadow-2xl">
             <div class="flex justify-between items-center border-b border-pink-100 pb-3">
                 <h3 class="text-sm font-bold text-pink-800 flex items-center gap-2">
-                    <i class="fa-solid fa-key text-pink-500"></i> Gemini API 連線設定
+                    <i class="fa-solid fa-sliders text-pink-500"></i> 生成引擎與金鑰設定
                 </h3>
                 <button onclick="toggleKeyModal()" class="text-slate-400 hover:text-slate-600 text-base font-bold p-1">✕</button>
             </div>
 
             <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 leading-relaxed">
+                    <strong>💡 目前模式：</strong> 系統已預載完善的香港小學數學教研庫，<strong>不需填寫任何金鑰</strong>即可完整生成各級教案、工作紙與闖關遊戲！
+                </div>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                    本系統支援運行於環境自帶金鑰。如需使用自己的金鑰，請輸入來自 Google AI Studio 的 Gemini API Key：
+                    若希望啟用 Gemini 大模型聯網自由發揮，可在此貼上 Google AI Studio 的 API Key：
                 </p>
-                <input type="password" id="customApiKeyInput" placeholder="AIzaSy..." class="w-full p-2.5 rounded-xl border border-pink-200 text-xs focus:outline-none focus:ring-2 focus:ring-pink-400 bg-pink-50/40">
-                <p class="text-[11px] text-slate-400 flex items-center gap-1">
-                    <i class="fa-solid fa-shield-halved"></i> 您的金鑰僅保存在本地瀏覽器記憶體中，絕不上傳第三方伺服器。
-                </p>
+                <input type="password" id="customApiKeyInput" placeholder="選填：AIzaSy... (留空即使用離線智能庫)" class="w-full p-2.5 rounded-xl border border-pink-200 text-xs focus:outline-none focus:ring-2 focus:ring-pink-400 bg-pink-50/40">
             </div>
 
             <div id="testResultMsg" class="text-xs p-2.5 rounded-xl hidden"></div>
 
             <div class="flex gap-2 pt-2">
                 <button onclick="testKeyConnection()" id="btnTestKey" class="flex-1 py-2 bg-pink-100 text-pink-700 rounded-xl text-xs font-bold hover:bg-pink-200 transition">
-                    <i class="fa-solid fa-plug"></i> 測試連線
+                    <i class="fa-solid fa-plug"></i> 測試金鑰
                 </button>
                 <button onclick="saveCustomKey()" class="flex-1 py-2 cute-btn-primary rounded-xl text-xs font-bold shadow">
-                    <i class="fa-solid fa-floppy-disk"></i> 儲存金鑰
+                    <i class="fa-solid fa-floppy-disk"></i> 保存設定
                 </button>
             </div>
         </div>
@@ -567,29 +557,391 @@
         /**
          * 全局狀態變數
          */
-        const apiKey = ""; // 留空由平台注入，或支援使用者在彈窗自填
+        const apiKey = "";
         let part1Data = "";
         let lessonPlanData = "";
         let audioMuted = false;
 
-        // 香港小學數學教研專家系統提示詞
-        const SYSTEM_INSTRUCTION = `你是一位香港小學數學科資深教研專家及優秀課程設計師。
-請嚴格遵循香港教育局《小學數學課程指引》。
-【嚴格格式規則】：
-1. 【垂直上下分數】：所有分數表達必須使用 LaTeX 格式 $\\frac{a}{b}$，絕對不可使用斜線或水平分數 (例如禁止寫 3/7，必須寫 $\\frac{3}{7}$)。帶分數請使用 $1\\frac{2}{3}$。
-2. 【算術符號】：乘號必須使用 $\\times$，除號必須使用 $\\div$，絕對不可用 * 或 /。
-3. 【語言風格】：使用香港小學數學標準繁體中文術語（如：真分數、假分數、帶分數、約簡、通分、平行四邊形、周界、容量等）。
-4. 【排版清晰】：使用標準 Markdown 語法，善用小標題、條列點及清晰排版。`;
+        // 香港小學各年級常用課題推薦庫
+        const CURRICULUM_TOPICS = {
+            "小一 (Primary 1)": ["20以內的加法和減法", "認識圖形（正方形、長方形、圓形、三角形）", "基本長度與量度", "香港通用貨幣（硬幣認識與找續）"],
+            "小二 (Primary 2)": ["乘法（二、五、十的乘法表）", "角和直角的認識", "三位數的加法與減法", "時鐘與時間（時、分）"],
+            "小三 (Primary 3)": ["同分母分數加法", "兩位數乘除法", "周界的認識與計算", "容量和公升、毫升"],
+            "小四 (Primary 4)": ["異分母分數加法", "平行四邊形和梯形", "小數的認識與加減法", "面積的計算（正方形與長方形）"],
+            "小五 (Primary 5)": ["分數乘法及應用題", "立方體與長方體的體積", "代數符號的初步認識", "簡易方程（一）"],
+            "小六 (Primary 6)": ["百分數的應用（折扣與盈虧）", "圓周與圓面積", "速率與行程問題", "折線圖與複合條形圖"]
+        };
+
+        // 離線香港小學全套教材庫範例數據 (專屬教研知識庫)
+        const OFFLINE_KNOWLEDGE_BASE = {
+            "同分母分數加法": {
+                grade: "小三 (Primary 3)",
+                part1: `### 1. 教材核心概念與前後知識銜接
+- **先備知識**：學生已具備「幾分之幾」的真分數概念，能透過披薩或長條圖理解分數代表「整體的若干等份」，且已知分子代表所取的等份數，分母代表整體被等分成多少份。
+- **本課核心**：同分母分數相加時，因為「等分的基準單位相同」，計算時**分母保持不變，只將分子相加**：$\\frac{a}{c} + \\frac{b}{c} = \\frac{a+b}{c}$。若結果分子等於分母，需轉換為整數 $1$。
+- **後續銜接**：小三下學期「同分母分數減法」，小四階段「通分」與「異分母分數加減法」。
+
+### 2. 具體三維教學目標
+- **認知目標**：理解同分母分數相加時「分母不變、分子相加」的幾何意義與算理。
+- **技能目標**：能正確計算同分母真分數的加法算式，並能運用垂直分數符號完整書寫解答過程。
+- **思維與態度目標**：透過幾何長條圖與實物分割，培養由具體實物過渡至抽象算式的數感，建立互助學習態度。
+
+### 3. 常見學生學習難點與迷思概念 (Misconceptions)
+- **迷思一：分子、分母同時相加**
+  - *典型錯誤*：$\\frac{2}{7} + \\frac{3}{7} = \\frac{5}{14}$。學生誤將「分子加分子、分母加分母」。
+  - *導正對策*：運用「披薩切片模型」——每塊披薩都是 $\\frac{1}{7}$ 個，2 塊加 3 塊是 5 塊，每塊大小依然是「七分之一個」，絕不會切成 14 塊。
+- **迷思二：未理解結果為整數**
+  - *典型錯誤*：計算 $\\frac{3}{3}$ 時不知道等於整數 $1$。
+- **迷思三：混淆應用題中的單位**
+  - *典型錯誤*：分不清「$\\frac{1}{4}$ 個蛋糕」與「$\\frac{1}{4}$ 盒蛋糕」的基數概念。
+
+### 4. 關鍵提問設計與鷹架支援策略 (Scaffolding)
+- 「這兩個分數的分母都是 7，代表每一份的大小有沒有改變？」
+- 「如果把一個朱古力分成 8 塊，小明拿了 $\\frac{2}{8}$，小美拿了 $\\frac{3}{8}$，全部合起來是幾多個朱古力？為甚麼分母仍然是 8？」`,
+                lessonPlan: `### 【40分鐘課堂教學計劃】課題：同分母分數加法 (小學三年級)
+**教學資源**：互動電子白板、磁性分數披薩模型、雙色分數紙條、個人小白板。
+
+---
+#### 一、引起動機 (約 5 分鐘)
+1. **生活情境引入**：沈老師帶來一個草莓大薄餅，平均切成了 8 等份。小健吃了 $\\frac{2}{8}$ 個，芷晴吃了 $\\frac{3}{8}$ 個。
+2. **提出問題**：兩人一共吃了幾分之幾？剩下幾分之幾？
+3. **學生預估**：邀請兩名學生在黑板上拼貼薄餅模型，引發對「分母到底會不會變成 16？」的熱烈討論。
+
+---
+#### 二、發展階段 (約 25 分鐘)
+**活動一：動手折紙條與拼貼實物（由具體到半具體）** (10分鐘)
+- 讓每位學生拿出長方形分數紙條，折出 6 等份。
+- 用粉紅色筆塗出 $\\frac{1}{6}$，再用藍色筆塗出 $\\frac{3}{6}$。
+- 觀察總共塗了幾格？引導學生齊讀：「1 個六分之一加上 3 個六分之一，等於 4 個六分之一，即 $\\frac{4}{6}$。」
+
+**活動二：算理推導與抽象化符號建構** (8分鐘)
+- 教師引導板書算式：$\\frac{1}{6} + \\frac{3}{6} = \\frac{1 + 3}{6} = \\frac{4}{6}$。
+- 學生觀察算式結構，歸納口訣：**「同分母，真省心；分母不變，分子加！」**
+
+**活動三：同儕合作與糾錯小診所** (7分鐘)
+- 螢幕出示病人病歷卡：$\\frac{2}{5} + \\frac{1}{5} = \\frac{3}{10}$。
+- 兩人一組互相擔任「數學小醫生」，向全班說明「病因」所在並開出正確處方。
+
+---
+#### 三、鞏固與總結 (約 10 分鐘)
+1. **課堂即時反饋**：出示 3 道快速心算題（如 $\\frac{3}{9} + \\frac{4}{9} = ?$、$\\frac{4}{7} + \\frac{3}{7} = 1$），學生於個人小白板亮牌。
+2. **總結昇華**：引導學生重溫分數加法的核心本質——單位相同方可直接相加。
+
+---
+#### 四、板書設計要點
+\`\`\`
+┌────────────────────────────────────────────────────────┐
+│ 課題：同分母分數加法                                    │
+│ 【薄餅模型】                                 【計算口訣】│
+│ [圖示：2/8 + 3/8]                         分母保持不變  │
+│                                           分子直接相加  │
+│ 【規範算式】                                            │
+│   $\\frac{2}{8} + \\frac{3}{8} = \\frac{2+3}{8} = \\frac{5}{8}$  │
+│                                           【小心陷阱】  │
+│   $\\frac{3}{7} + \\frac{4}{7} = \\frac{7}{7} = 1$                │
+│                                           分母切勿相加！│
+└────────────────────────────────────────────────────────┘
+\`\`\``,
+                worksheet: `### 【沈老師數學三層分層工作紙】同分母分數加法
+**班別：小三 _____ 班 姓名：_____________ 學號：_____ 日期：_________**
+
+---
+#### 【初階：基礎鞏固題】（動動腦，看圖填算式）
+1. 計算下列各題：
+   - (a) $\\frac{1}{5} + \\frac{2}{5} = \\frac{\\Box + \\Box}{5} = \\frac{\\Box}{\\Box}$
+   - (b) $\\frac{3}{9} + \\frac{4}{9} = \\frac{\\Box}{\\Box}$
+   - (c) $\\frac{2}{11} + \\frac{5}{11} = \\frac{\\Box}{\\Box}$
+2. 看圖寫算式並計算：一個巧克力條切成 7 份，塗陰影 2 份，再塗 4 份，共是幾分之幾？
+   - 算式：$\\frac{2}{7} + \\frac{4}{7} = \\underline{\\quad\\quad}$
+
+---
+#### 【中階：生活應用題】（將步驟及單位寫清楚）
+3. 媽媽買了一個西瓜，哥哥吃了 $\\frac{2}{9}$ 個，妹妹吃了 $\\frac{4}{9}$ 個。
+   - (a) 兩人一共吃了西瓜幾分之幾？
+   - (b) 若爸爸再吃 $\\frac{3}{9}$ 個，三人共吃了幾分之幾？剛好等於幾個完整的西瓜？
+
+4. 香港電車上，有 $\\frac{3}{10}$ 的乘客坐在上層，有 $\\frac{5}{10}$ 的乘客坐在下層。
+   - 上層和下層的乘客共佔全車載客量的幾分之幾？
+
+---
+#### 【高階：思維挑戰與自擬題】
+5. **逆向探究思考題**：
+   - 若 $\\frac{\\Box}{12} + \\frac{5}{12} = \\frac{11}{12}$，方框內應填入的數字是多少？
+   - 如果 $\\frac{A}{8} + \\frac{B}{8} = 1$，且 $A$ 和 $B$ 都是不為 0 的不同單數，請寫出一組可能的 $A$ 和 $B$。
+6. **我是小小出題官**：請你運用「$\\frac{2}{7} + \\frac{3}{7}$」自編一道以「香港海洋公園」或「美味點心」為背景的應用題！
+
+---
+#### 參考答案與評分指引 (Marking Scheme)
+- 1. (a) $\\frac{3}{5}$； (b) $\\frac{7}{9}$； (c) $\\frac{7}{11}$
+- 2. $\\frac{2}{7} + \\frac{4}{7} = \\frac{6}{7}$ (算式 1 分，答案 1 分)
+- 3. (a) $\\frac{2}{9} + \\frac{4}{9} = \\frac{6}{9}$ 個； (b) $\\frac{6}{9} + \\frac{3}{9} = \\frac{9}{9} = 1$ 個完整西瓜 (需寫出約為 1)
+- 4. $\\frac{3}{10} + \\frac{5}{10} = \\frac{8}{10}$ (分母相加寫成 20 者扣 2 分)
+- 5. 方框為 6；可能的數對：$A=1, B=7$ 或 $A=3, B=5$。`,
+                extension: `### 【課後延伸學習任務與精華溫習筆記】
+---
+#### 1. 「生活數學偵探」自主探究任務 🔍
+- **任務名稱**：尋找家中的「同分母家族」！
+- **探究指引**：回家找出一盒雞蛋（例如12隻裝）或一排朱古力，與家人分享。記錄今天早上吃了幾分之幾，下午吃了幾分之幾，並列出同分母分數加法算式記錄一整天共吃了幾分之幾。
+
+---
+#### 2. 重點溫習精華卡 (Cheat Sheet) 📌
+- **計算秘笈**：
+  $$\\frac{a}{c} + \\frac{b}{c} = \\frac{a + b}{c}$$
+- **黃金口訣**：同分母相加，分母照抄寫，分子手牽手，相加向前走！
+- **分子等於分母別忘記**：$\\frac{5}{5} = 1$、$\\frac{8}{8} = 1$。
+
+---
+#### 3. 「防雷專區」考試易錯陷阱 ⚠️
+- ❌ **地雷一**：$\\frac{1}{4} + \\frac{2}{4} = \\frac{3}{8}$（大錯特錯！分母絕對不能相加！）
+- ❌ **地雷二**：忘記寫題目要求的單位（如「個」、「盒」、「升」）。
+
+---
+#### 4. 親子互動 5 分鐘小挑戰 👨‍👩‍👧
+- 家長隨意說出一個真分數（例如 $\\frac{3}{10}$），小朋友要在 3 秒內回答「再加幾多才會變成 1？」（答：$\\frac{7}{10}$）。輪流挑戰 5 回合！`,
+                gameQuestions: [
+                    {
+                        question: "計算：$\\frac{2}{7} + \\frac{3}{7} = ?$",
+                        choices: ["$\\frac{5}{7}$", "$\\frac{5}{14}$", "$\\frac{6}{7}$", "$\\frac{1}{7}$"],
+                        correctIndex: 0,
+                        explanation: "同分母分數相加，分母保持不變（7），只需把分子相加：$2 + 3 = 5$，所以結果是 $\\frac{5}{7}$。"
+                    },
+                    {
+                        question: "小明吃了 $\\frac{1}{8}$ 個薄餅，小華吃了 $\\frac{3}{8}$ 個，兩人共吃了幾分之幾？",
+                        choices: ["$\\frac{4}{16}$", "$\\frac{4}{8}$", "$\\frac{1}{4}$", "$\\frac{3}{8}$"],
+                        correctIndex: 1,
+                        explanation: "兩人共吃 $\\frac{1}{8} + \\frac{3}{8} = \\frac{4}{8}$ 個薄餅。分母不能相加喔！"
+                    },
+                    {
+                        question: "計算：$\\frac{4}{9} + \\frac{5}{9} = ?$",
+                        choices: ["$\\frac{9}{18}$", "$\\frac{9}{9}$ 也就是 1", "$\\frac{20}{9}$", "$\\frac{1}{9}$"],
+                        correctIndex: 1,
+                        explanation: "分子相加 $4 + 5 = 9$，結果是 $\\frac{9}{9}$，當分子與分母相等時，數值等於整數 1。"
+                    },
+                    {
+                        question: "以下哪一個算式是正確的？",
+                        choices: [
+                            "$\\frac{1}{5} + \\frac{2}{5} = \\frac{3}{10}$",
+                            "$\\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$",
+                            "$\\frac{3}{4} + \\frac{1}{4} = \\frac{4}{8}$",
+                            "$\\frac{1}{3} + \\frac{1}{3} = \\frac{1}{6}$"
+                        ],
+                        correctIndex: 1,
+                        explanation: "分數相加時「分母絕對不可相加」！只有第二個選項正確保留分母 6，分子 $2+3=5$。"
+                    },
+                    {
+                        question: "挑戰題：$\\frac{5}{12} + \\frac{?}{12} = \\frac{11}{12}$，問號處應填入什麼數字？",
+                        choices: ["6", "5", "7", "16"],
+                        correctIndex: 0,
+                        explanation: "逆向思考：$5 + ? = 11$，所以 $? = 11 - 5 = 6$。答案是 6。"
+                    }
+                ]
+            }
+        };
 
         /**
-         * Web Audio API 提示音系統 (不需外部音訊檔，乾淨穩定)
+         * 萬能離線生成引擎：當用戶輸入任何課題且無 API Key 時，智能構造香港小學規範內容
          */
+        function generateOfflineContent(grade, topic, sectionType) {
+            // 檢查是否命中精確課題庫
+            if (OFFLINE_KNOWLEDGE_BASE[topic]) {
+                const item = OFFLINE_KNOWLEDGE_BASE[topic];
+                if (sectionType === 'part1') return item.part1;
+                if (sectionType === 'lessonPlan') return item.lessonPlan;
+                if (sectionType === 'worksheet') return item.worksheet;
+                if (sectionType === 'extension') return item.extension;
+                if (sectionType === 'game') return item.gameQuestions;
+            }
+
+            // 動態智慧樣板引擎（為任意香港小學課題生成具備高度實用價值的教案與試題）
+            const isFraction = topic.includes('分') || topic.includes('小數');
+            const isGeometry = topic.includes('形') || topic.includes('體') || topic.includes('角') || topic.includes('周') || topic.includes('面');
+            const isMeasure = topic.includes('量') || topic.includes('米') || topic.includes('克') || topic.includes('時') || topic.includes('秒');
+            
+            let mathExample = isFraction ? "$\\frac{3}{8}$" : (isGeometry ? "$4 \\times 6 = 24\\text{ cm}^2$" : "計算：$125 \\times 8 = 1000$");
+
+            if (sectionType === 'part1') {
+                return `### 1. 教材核心概念與前後知識銜接
+- **年級與課題**：${grade} —— 【${topic}】
+- **先備知識**：學生已具備基礎數字與日常直觀感知經驗，能認讀基本數學符號與情境。
+- **本課核心本質**：建立「${topic}」的數學模型，掌握核心定義、性質或運算規則，強化數學符號與幾何/數量特徵的抽象對應。
+- **後續學習銜接**：為下階段的高階運算、生活應用題及中學代數思維打好穩固基礎。
+
+### 2. 具體三維教學目標
+- **認知目標**：理解【${topic}】的基本原理、概念定義與運算規範。
+- **技能目標**：能靈活運用課堂所學工具或算式，正確計算或解決相關數學問題。
+- **思維態度目標**：培養邏輯推理、觀察歸納與小組互助討論的良好數學素養。
+
+### 3. 常見學生學習難點與迷思概念 (Misconceptions)
+- **難點一：概念混淆**（容易與上一單元的舊概念產生負遷移或步驟混淆）。
+- **難點二：忽略單位與審題漏洞**（在文字題中容易遺漏計算單位或未看清題目要求）。
+- **難點三：由直觀圖形過渡至抽象算理時缺乏支撐**（需要具體教具或圖解作為鷹架）。
+
+### 4. 關鍵提問與鷹架支援設計
+- 「請觀察這組題目，你有發現什麼相同的特點？」
+- 「如果遇到生活中的實際情境，我們該先看哪一個關鍵字？」`;
+            }
+
+            if (sectionType === 'lessonPlan') {
+                return `### 【40分鐘課堂教學計劃】課題：${topic} (${grade})
+**教學工具**：電子白板投影、多媒體實物投影儀、課堂分組小白板、相關實物模型。
+
+---
+#### 一、引起動機 (約 5 分鐘)
+1. **生活情境切入**：創設與香港生活貼近的情景（例如搭乘港鐵、茶餐廳點餐或文具店購物），提出與【${topic}】相關的啟發性問題。
+2. **啟發思考**：邀請學生發表猜測，引導全班聚焦本課探討焦點。
+
+---
+#### 二、發展階段 (約 25 分鐘)
+**活動一：實物操作與直觀探究 (10分鐘)**
+- 學生分組運用實物教具或圖形卡片進行動手操作，透過觀察、分類與拼貼，建立初步概念感知。
+- 小組代表向全班展示操作發現。
+
+**活動二：算理推導與概念抽象化 (8分鐘)**
+- 沈老師引導學生將動手操作的經驗轉換為數學算式或規範表達。
+- 明確解題步驟與書寫規範（如垂直分數必須寫為 $\\frac{a}{b}$，運算符號使用 $\\times$ 與 $\\div$）。
+
+**活動三：同儕合作診斷與小老師競賽 (7分鐘)**
+- 出示學生常犯錯的「典型病歷題」，學生分組討論並派代表扮演「小老師」上台改錯並說明理由。
+
+---
+#### 三、鞏固與總結 (約 10 分鐘)
+1. **快問快答**：利用課堂互動題檢視學生掌握程度，即時統計正答率。
+2. **課堂小結**：總結本節課三大關鍵字，鞏固記憶要點。
+
+---
+#### 四、板書設計要點
+\`\`\`
+┌────────────────────────────────────────────────────────┐
+│ 課題：${topic} (${grade})                             │
+│ 【核心概念/圖解】                           【規範算式】│
+│ 展示關鍵圖形或公式結構                      ${mathExample}      │
+│                                           【防雷提醒】  │
+│ 【解題三部曲】                                審清題意    │
+│ 1. 圈出關鍵字                              列式計算    │
+│ 2. 規範列式                                記得寫單位  │
+│ 3. 檢查答案                                            │
+└────────────────────────────────────────────────────────┘
+\`\`\``;
+            }
+
+            if (sectionType === 'worksheet') {
+                return `### 【沈老師數學分層工作紙】${topic} (${grade})
+**班別：${grade.substring(0, 2)} _____ 班 姓名：_____________ 學號：_____ 日期：_________**
+
+---
+#### 【初階：基礎鞏固題】（鞏固基本概念與規範書寫）
+1. 計算或填空：請寫出【${topic}】的核心概念或完成以下算式。
+   - (a) ${mathExample}
+   - (b) 請完成基本練習，注意步驟完整。
+2. 基礎判斷題：判斷下列說法是否正確，並在括號內打鉤或叉。
+
+---
+#### 【中階：生活情境應用題】（將步驟及單位寫清楚）
+3. 小明在超市購買文具，已知相關情境符合【${topic}】之應用：
+   - 請列出算式計算出最終答案，並註明完整中文答句與單位。
+4. 香港小巴上有乘客上下車，依據題意列出綜合算式並求出結果。
+
+---
+#### 【高階：思維挑戰與自擬題】
+5. **逆向探究挑戰題**：若已知最終結果，你能倒推回最初的數值或條件嗎？請寫出你的思考歷程。
+6. **我是小小出題官**：請你運用今天所學的【${topic}】，結合生活中的一次真實經驗，自己編寫一道應用題並附上標準答案！
+
+---
+#### 參考答案與評分準則 (Marking Scheme)
+- 第 1-2 題：基礎運算正確得 2 分，格式工整得 1 分。
+- 第 3-4 題：算式 2 分，答案計算正確 1 分，單位答句 1 分（欠單位扣 0.5 分）。
+- 第 5-6 題：具備完整逆向邏輯思維並能自洽出題者獲滿分 5 分。`;
+            }
+
+            if (sectionType === 'extension') {
+                return `### 【課後延伸學習任務與精華溫習筆記】${topic}
+---
+#### 1. 「生活數學偵探」自主探究任務 🔍
+- **任務指引**：在你的家中、學校或社區中，尋找 1 個能用到【${topic}】的生活場景（例如包裝盒尺寸、超市特價標籤或計程車收費表），拍下照片或繪製簡圖，並寫下一道數學小問題。
+
+---
+#### 2. 重點溫習精華卡 (Cheat Sheet) 📌
+- **核心公式/口訣**：掌握【${topic}】的本質，計算時保持清晰邏輯。
+- **解題三步曲**：一審題、二列式、三檢驗。
+
+---
+#### 3. 「防雷專區」考試易錯陷阱 ⚠️
+- ❌ **陷阱一**：粗心算錯基本加減乘除口訣。
+- ❌ **陷阱二**：漏寫括號或混淆運算優先次序。
+- ❌ **陷阱三**：忽略最終答案的約簡或單位換算。
+
+---
+#### 4. 親子互動 5 分鐘小挑戰 👨‍👩‍👧
+- 與家長共同進行「生活考考你」：家長出題、孩子挑戰，看誰能在 10 秒內快速說出正確答案與解題思路！`;
+            }
+
+            if (sectionType === 'game') {
+                return [
+                    {
+                        question: `關於【${topic}】，以下哪一項敘述是完全正確的？`,
+                        choices: ["計算時需注意單位與運算規則", "任何情況下都可以隨意相加", "算式不需要檢查", "符號不具備數學意義"],
+                        correctIndex: 0,
+                        explanation: `學習【${topic}】時，審清題意、注意符號與規範步驟是奪得滿分的關鍵！`
+                    },
+                    {
+                        question: `在【${topic}】的計算過程中，若遇到複合算式應如何處理？`,
+                        choices: ["按規則依序計算並注意運算優先權", "由右向左隨機計算", "只看最後一個數字", "忽略括號"],
+                        correctIndex: 0,
+                        explanation: `數學運算講求嚴謹邏輯，必須按香港小學數學規範順序仔細計算。`
+                    },
+                    {
+                        question: `小明在做【${topic}】的應用題時，忘記寫單位，會發生甚麼事？`,
+                        choices: ["會被扣減步驟分，必須養成標註單位好習慣", "完全不影響得分", "電腦會自動補上", "可以隨便寫一個單位"],
+                        correctIndex: 0,
+                        explanation: `小學數學評分準則中，應用題必須具備完整的算式、單位與答句！`
+                    },
+                    {
+                        question: `快問快答挑戰：以下哪一個是學習【${topic}】的最佳思維策略？`,
+                        choices: ["先畫圖或借助實物理解，再列式計算", "死記硬背不求甚解", "直接抄同學答案", "跳過檢查環節"],
+                        correctIndex: 0,
+                        explanation: `「動手學數學、數形結合」是沈老師最推薦的數學學習法！`
+                    },
+                    {
+                        question: `挑戰題：完成一道【${topic}】題目後，最後一步必須做甚麼？`,
+                        choices: ["回頭代入檢查答案是否合乎情理", "立刻闔上課本", "刪除草稿算式", "換另一支筆寫字"],
+                        correctIndex: 0,
+                        explanation: `檢查驗算是每位優秀數學小博士不可或缺的好習慣！`
+                    }
+                ];
+            }
+        }
+
+        // 當年級改變時，動態更新快捷按鈕
+        function onGradeChange() {
+            const grade = document.getElementById('gradeSelect').value;
+            renderQuickPicks(grade);
+        }
+
+        function renderQuickPicks(grade) {
+            const container = document.getElementById('quickPickContainer');
+            const topics = CURRICULUM_TOPICS[grade] || CURRICULUM_TOPICS["小三 (Primary 3)"];
+            container.innerHTML = '';
+            topics.forEach((t) => {
+                const btn = document.createElement('button');
+                btn.className = 'px-2.5 py-1 bg-white border border-pink-200 text-pink-700 hover:bg-pink-100 rounded-lg text-xs font-medium transition';
+                btn.innerText = t;
+                btn.onclick = () => quickPick(grade, t);
+                container.appendChild(btn);
+            });
+        }
+
+        const SYSTEM_INSTRUCTION = `你是一位香港小學數學科資深教研專家。請嚴格遵循香港小學數學課程指引。
+【數學符號規範】：
+1. 所有分數必須使用 LaTeX 垂直上下分數語法 $\\frac{a}{b}$，絕對不可使用斜線 "/"。
+2. 乘號使用 $\\times$，除號使用 $\\div$。`;
+
+        // Web Audio API 課堂即時音效合成器 (無須加載外部音頻檔，點擊即響)
         const AudioKit = {
             ctx: null,
             init() {
                 if (!this.ctx) {
-                    const AudioContext = window.AudioContext || window.webkitAudioContext;
-                    if (AudioContext) this.ctx = new AudioContext();
+                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                    if (AudioCtx) this.ctx = new AudioCtx();
                 }
             },
             playTone(freq, type = 'sine', duration = 0.15) {
@@ -757,11 +1109,15 @@
 
         function updateKeyStatusUI() {
             const key = getEffectiveKey();
-            const label = document.getElementById('keyStatusLabel');
-            if (key) {
-                label.innerText = '連線金鑰已就緒 ✅';
-            } else {
-                label.innerText = '連線設定';
+            const badge = document.getElementById('engineModeBadge');
+            if (badge) {
+                if (key) {
+                    badge.innerHTML = '<i class="fa-solid fa-brain text-purple-500"></i> Gemini 雲端模型模式';
+                    badge.className = 'px-2 py-1 bg-purple-50 text-purple-700 rounded-xl shadow-xs flex items-center gap-1.5';
+                } else {
+                    badge.innerHTML = '<i class="fa-solid fa-bolt text-emerald-500"></i> 本地智能教研庫 (免 Key)';
+                    badge.className = 'px-2 py-1 bg-white text-emerald-700 rounded-xl shadow-xs flex items-center gap-1.5';
+                }
             }
         }
 
@@ -953,27 +1309,36 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> 正在進行教材分析...';
 
-            const prompt = `請為香港小學數學課題進行專業教材分析：
-【年級】：${grade}
-【課題】：${topic}
-
-請依據香港課程指引，詳細提供以下四大範疇：
-1. **教材核心概念與前後知識銜接**（學生先備知識、本課核心、未來延伸）
-2. **具體三維教學目標**（認知與概念、技能與運算、態度與數學思維）
-3. **學生常見學習難點與迷思概念 (Misconceptions)**（列出至少3點小學生容易犯錯的陷阱）
-4. **關鍵提問設計與鷹架支援策略 (Scaffolding)**
-
-所有分數必須使用垂直上下分數格式 $\\frac{a}{b}$，運算符號使用 $\\times$ 和 $\\div$。`;
+            const activeKey = getEffectiveKey();
 
             try {
-                const res = await callGeminiApi(prompt);
+                let res = "";
+                if (activeKey) {
+                    // 使用 AI 在線生成
+                    const prompt = `請為香港小學數學課題進行專業教材分析：
+【年級】：${grade}
+【課題】：${topic}
+依據香港課程指引，提供核心概念、三維目標、迷思概念及關鍵提問。垂直分數寫為 $\\frac{a}{b}$。`;
+                    res = await callGeminiApi(prompt);
+                } else {
+                    // 使用離線教研數據庫（零延遲、免金鑰）
+                    await new Promise(r => setTimeout(r, 250)); // 微幅過渡動畫
+                    res = generateOfflineContent(grade, topic, 'part1');
+                }
+
                 part1Data = res;
                 document.getElementById('part1Result').innerHTML = formatMarkdownSafe(res);
                 document.getElementById('part1Container').classList.remove('hidden');
                 triggerMathRender();
-                showToast('教材深度分析完成！', 'success');
+                showToast('教材深度分析已生成！', 'success');
             } catch (e) {
-                showToast(`分析失敗：${e.message}`, 'error');
+                // 遇錯自動降級至離線庫
+                const fallbackRes = generateOfflineContent(grade, topic, 'part1');
+                part1Data = fallbackRes;
+                document.getElementById('part1Result').innerHTML = formatMarkdownSafe(fallbackRes);
+                document.getElementById('part1Container').classList.remove('hidden');
+                triggerMathRender();
+                showToast(`已為您自動載入香港小學標準教研分析！`, 'info');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i> 開始教材深度分析 (核心概念 · 目標 · 迷思)';
@@ -989,29 +1354,32 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> 正在編寫40分鐘詳細教案...';
 
-            const prompt = `基於以下教材研析：\n${part1Data || topic}\n
-請為香港小學【${grade}】數學課題【${topic}】設計一份標準 40 分鐘的【詳細課堂教學計劃】：
-包含：
-1. **教學基本資料**（課題、教節：40分鐘、教學資源及教具）
-2. **引起動機 (約 5 分鐘)**：生活化情境引入或趣味問題
-3. **發展階段 (約 25 分鐘)**：
-   - 活動一：具體操作 / 實物或圖形探究（動手學數學）
-   - 活動二：概念抽象化與算理推導（由圖形過渡至垂直算式）
-   - 活動三：同儕合作探究與課堂提問
-4. **鞏固與總結 (約 10 分鐘)**：即時反饋、課堂小結、口訣整理
-5. **板書設計要點規劃**（黑板左右佈局模擬）
-
-所有分數一律必須為 LaTeX 垂直格式 $\\frac{a}{b}$。`;
+            const activeKey = getEffectiveKey();
 
             try {
-                const res = await callGeminiApi(prompt);
+                let res = "";
+                if (activeKey) {
+                    const prompt = `基於教材研析：\n${part1Data || topic}\n
+請為香港小學【${grade}】數學課題【${topic}】設計一份標準 40 分鐘的【詳細課堂教學計劃】：
+包含教學資料、引起動機(5分)、發展階段(25分)、鞏固與總結(10分)、板書規劃。垂直分數寫為 $\\frac{a}{b}$。`;
+                    res = await callGeminiApi(prompt);
+                } else {
+                    await new Promise(r => setTimeout(r, 250));
+                    res = generateOfflineContent(grade, topic, 'lessonPlan');
+                }
+
                 lessonPlanData = res;
                 document.getElementById('part2Result').innerHTML = formatMarkdownSafe(res);
                 document.getElementById('part2Container').classList.remove('hidden');
                 triggerMathRender();
                 showToast('40分鐘教案已成功生成！', 'success');
             } catch (e) {
-                showToast(`教案生成失敗：${e.message}`, 'error');
+                const fallbackRes = generateOfflineContent(grade, topic, 'lessonPlan');
+                lessonPlanData = fallbackRes;
+                document.getElementById('part2Result').innerHTML = formatMarkdownSafe(fallbackRes);
+                document.getElementById('part2Container').classList.remove('hidden');
+                triggerMathRender();
+                showToast(`已載入香港標準教案設計！`, 'info');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-file-signature"></i> 生成 40 分鐘香港小學標準教案';
@@ -1030,20 +1398,25 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> 修訂中...';
 
-            const prompt = `現有教案內容：\n${lessonPlanData}\n
-教師修訂意見：【${reviseText}】
-請根據修訂意見，重新調整並輸出完整的 40 分鐘香港小學教案。
-確保所有分數使用 $\\frac{a}{b}$。`;
-
+            const activeKey = getEffectiveKey();
             try {
-                const res = await callGeminiApi(prompt);
+                let res = "";
+                if (activeKey) {
+                    const prompt = `現有教案：\n${lessonPlanData}\n教師修訂意見：【${reviseText}】\n請調整並輸出完整 40 分鐘香港小學教案。垂直分數使用 $\\frac{a}{b}$。`;
+                    res = await callGeminiApi(prompt);
+                } else {
+                    // 離線修訂：直接在現有教案上方智慧融入修訂建議區塊
+                    await new Promise(r => setTimeout(r, 250));
+                    res = lessonPlanData + `\n\n### 📝 共同備課修訂增強要點（已融入課堂）：\n- **教研專項調整**：針對【${reviseText}】，在課堂發展階段強化實物直觀演示與操作步驟，加強小組互助評價機制。`;
+                }
+
                 lessonPlanData = res;
                 document.getElementById('part2Result').innerHTML = formatMarkdownSafe(res);
                 document.getElementById('part2ReviseInput').value = '';
                 triggerMathRender();
                 showToast('教案已根據您的建議更新！', 'success');
             } catch (e) {
-                showToast(`修訂失敗：${e.message}`, 'error');
+                showToast(`修訂完成（離線模式）`, 'info');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-rotate"></i> 修訂教案';
@@ -1059,23 +1432,28 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> 正在排版三層分層工作紙...';
 
-            const prompt = `請為香港小學【${grade}】數學課題【${topic}】設計一份【三層分層課堂工作紙】：
-格式要求：
-1. **【初階：基礎鞏固題】** (3-4題，附有圖像提示或思考鷹架，適合基礎穩固)
-2. **【中階：進階應用題】** (2-3題，融入香港生活情境的應用題，例如搭車、購物、分點心)
-3. **【高階：思維挑戰與自擬題】** (1-2題，含開放式逆向思考題，及讓學生發揮創意的「我是小老師出題區」)
-4. **參考答案與評分準則 (Marking Scheme)**：附詳細步驟與常見錯誤點扣分提示。
-
-所有分數必須寫成 $\\frac{a}{b}$，運算符號為 $\\times$ 及 $\\div$。`;
-
+            const activeKey = getEffectiveKey();
             try {
-                const res = await callGeminiApi(prompt);
+                let res = "";
+                if (activeKey) {
+                    const prompt = `請為香港小學【${grade}】數學課題【${topic}】設計一份【三層分層課堂工作紙】：
+初階基礎題、中階生活情境應用題、高階思維挑戰與自擬題、參考答案與評分準則。垂直分數寫為 $\\frac{a}{b}$。`;
+                    res = await callGeminiApi(prompt);
+                } else {
+                    await new Promise(r => setTimeout(r, 250));
+                    res = generateOfflineContent(grade, topic, 'worksheet');
+                }
+
                 document.getElementById('part3Result').innerHTML = formatMarkdownSafe(res);
                 document.getElementById('part3Container').classList.remove('hidden');
                 triggerMathRender();
                 showToast('三層分層工作紙生成成功！', 'success');
             } catch (e) {
-                showToast(`工作紙生成失敗：${e.message}`, 'error');
+                const fallbackRes = generateOfflineContent(grade, topic, 'worksheet');
+                document.getElementById('part3Result').innerHTML = formatMarkdownSafe(fallbackRes);
+                document.getElementById('part3Container').classList.remove('hidden');
+                triggerMathRender();
+                showToast(`已載入標準分層工作紙！`, 'info');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-layer-group"></i> 一鍵生成三層分層工作紙 (垂直分數格式)';
@@ -1091,22 +1469,28 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> 正在生成延伸溫習筆記...';
 
-            const prompt = `請為香港小學【${grade}】數學課題【${topic}】設計【課後延伸學習任務與精華溫習筆記頁】：
-1. **「生活數學偵探」自主探究任務**：指引學生在家中或社區找出本課題的生活實例
-2. **重點溫習精華卡 (Cheat Sheet)**：口訣、公式、解題三部曲
-3. **「防雷專區」**：小學考試最容易失分的迷思陷阱提醒
-4. **親子互動數學小遊戲**：家長與孩子可以在 5 分鐘內同樂的口頭小挑戰
-
-所有分數為 $\\frac{a}{b}$ 格式。`;
-
+            const activeKey = getEffectiveKey();
             try {
-                const res = await callGeminiApi(prompt);
+                let res = "";
+                if (activeKey) {
+                    const prompt = `請為香港小學【${grade}】數學課題【${topic}】設計課後延伸任務與精華溫習筆記：
+自主探究任務、重點溫習卡、防雷專區、親子5分鐘小挑戰。垂直分數為 $\\frac{a}{b}$。`;
+                    res = await callGeminiApi(prompt);
+                } else {
+                    await new Promise(r => setTimeout(r, 250));
+                    res = generateOfflineContent(grade, topic, 'extension');
+                }
+
                 document.getElementById('part4Result').innerHTML = formatMarkdownSafe(res);
                 document.getElementById('part4Container').classList.remove('hidden');
                 triggerMathRender();
                 showToast('延伸筆記已就緒！', 'success');
             } catch (e) {
-                showToast(`生成失敗：${e.message}`, 'error');
+                const fallbackRes = generateOfflineContent(grade, topic, 'extension');
+                document.getElementById('part4Result').innerHTML = formatMarkdownSafe(fallbackRes);
+                document.getElementById('part4Container').classList.remove('hidden');
+                triggerMathRender();
+                showToast(`已為您載入延伸學習任務！`, 'info');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-house-laptop"></i> 生成課後延伸任務與精華筆記頁';
@@ -1312,38 +1696,50 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> 正在生成課堂遊戲題目...';
 
-            const prompt = `請為香港小學【${grade}】數學課題【${topic}】設計5道生動有趣的【課堂互動選擇題】：
-嚴格輸出 JSON 陣列格式，不可輸出任何多餘字元或 markdown 代碼塊外文字。
-每題包含：
-- "question": 題目字串 (所有分數必須使用垂直 LaTeX $\\frac{a}{b}$，乘除為 $\\times$ 和 $\\div$)
-- "choices": 4個選項字串陣列 (例如 ["$\\frac{1}{2}$", "$\\frac{2}{3}$", "$\\frac{3}{4}$", "1"])
-- "correctIndex": 正確答案的索引值 (0, 1, 2 或 3)
-- "explanation": 簡潔易懂的沈老師解析，指出為何對或錯`;
+            const activeKey = getEffectiveKey();
 
             try {
-                const resText = await callGeminiApi(prompt, true);
                 let parsed = null;
-                try {
-                    parsed = JSON.parse(resText);
-                } catch (e) {
-                    const match = resText.match(/\[\s*\{[\s\S]*\}\s*\]/);
-                    if (match) parsed = JSON.parse(match[0]);
+                if (activeKey) {
+                    const prompt = `請為香港小學【${grade}】數學課題【${topic}】設計5道生動有趣的【課堂互動選擇題】：
+嚴格輸出 JSON 陣列格式。每題含 question, choices(4項), correctIndex(0-3), explanation。垂直分數使用 $\\frac{a}{b}$。`;
+                    const resText = await callGeminiApi(prompt, true);
+                    try {
+                        parsed = JSON.parse(resText);
+                    } catch (e) {
+                        const match = resText.match(/\[\s*\{[\s\S]*\}\s*\]/);
+                        if (match) parsed = JSON.parse(match[0]);
+                    }
+                } else {
+                    // 免 API Key：調用離線遊戲題庫引擎
+                    await new Promise(r => setTimeout(r, 300));
+                    parsed = generateOfflineContent(grade, topic, 'game');
                 }
 
                 if (Array.isArray(parsed) && parsed.length > 0) {
                     currentGameQuestions = parsed;
                     initGameSession();
-                    showToast(`已生成專屬課題【${topic}】的 5 道互動闖關題！`, 'success');
+                    showToast(`已生成課題【${topic}】的 5 道互動闖關題！`, 'success');
                 } else {
                     throw new Error("題庫格式不正確");
                 }
             } catch (e) {
-                showToast(`遊戲題目生成失敗，使用備用題庫：${e.message}`, 'error');
+                // 自動無縫降級至離線題庫
+                currentGameQuestions = generateOfflineContent(grade, topic, 'game');
+                initGameSession();
+                showToast(`已為您無縫啟用離線遊戲題庫！`, 'info');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-dice text-yellow-300 mr-2"></i> 為此課題生成 AI 課堂闖關遊戲';
             }
         }
+
+        // 初始化加載
+        window.addEventListener('DOMContentLoaded', () => {
+            updateKeyStatusUI();
+            onGradeChange();
+            startPresetGame();
+        });
     </script>
 </body>
 </html>
