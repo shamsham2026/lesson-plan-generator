@@ -1,770 +1,769 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260908-05-b9d8a99","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/9e99ecf74af2a081.telemetry_sdk.js" integrity="sha512-tZ7fmfTx2KpCLjXQnEuL9azQ4A5+7+xumsx6r/WYVD0zCP/8LP8hDeCypMQesmP+WyAew4g7l5Ah23Bjd6yoVg=="></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小學數學科教學資源庫 (P1-P6)</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Marked.js for Markdown parsing -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <!-- MathJax for rendering Mathematical formulas -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
+  <title>小學數學教學資源庫</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/20ec72cea0cb85e1.editing_sdk.js" integrity="sha512-y1Lf0yXrnk1vqzLs9a/3x3pp+jSvei2Pbl+x/omYgN5b7HqLzMgs5Vx9HdgcQfw7jcDinPHCzHGQ6BsPf/68zQ=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
-    @media print {
-      .no-print { display: none !important; }
-      .print-only { display: block !important; }
-      body { background: white !important; font-size: 11pt; color: black; }
-      .sheet-box { box-shadow: none !important; border: 1px solid #94a3b8 !important; }
-      .page-break { page-break-before: always; }
+    :root {
+      --ink: #172033;
+      --muted: #64748b;
+      --line: #dbe4ee;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --paper: #ffffff;
+      --canvas: #f1f5f9;
     }
-    /* 表格自訂樣式 */
-    .md-zone table {
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--canvas);
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, .28);
+      outline-offset: 2px;
+    }
+
+    .resource-shell {
       width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      background:
+        radial-gradient(circle at 85% 0%, rgba(191, 219, 254, .6), transparent 28rem),
+        #f1f5f9;
     }
-    .md-zone th, .md-zone td {
-      border: 1px solid #cbd5e1;
-      padding: 0.65rem 0.85rem;
-      text-align: left;
+
+    .control-button {
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
     }
-    .md-zone th {
-      background-color: #f8fafc;
-      color: #1e293b;
-      font-weight: 600;
+
+    .control-button:hover { transform: translateY(-1px); }
+    .control-button:active { transform: translateY(0); }
+
+    .selection-button.is-active,
+    .tab-button.is-active {
+      color: #1d4ed8;
+      background: #eff6ff;
+      border-color: #2563eb;
+      font-weight: 700;
+      box-shadow: 0 1px 2px rgba(37, 99, 235, .1);
     }
+
+    .tab-button.is-active {
+      background: #ffffff;
+    }
+
+    .sheet-box {
+      min-height: 650px;
+    }
+
+    .md-zone {
+      color: #334155;
+      font-size: .925rem;
+      line-height: 1.72;
+    }
+
+    .md-zone h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      border-left: 4px solid #2563eb;
+      padding-left: .7rem;
+      margin: 0 0 1rem;
+    }
+
     .md-zone h3 {
-      font-size: 1.15rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #1e40af;
-      border-left: 4px solid #3b82f6;
-      padding-left: 0.5rem;
-      margin-top: 1.25rem;
-      margin-bottom: 0.6rem;
+      margin: 1.35rem 0 .5rem;
     }
-    .md-zone p, .md-zone li {
-      line-height: 1.65;
+
+    .md-zone p {
+      margin: .5rem 0;
     }
-    /* 學生模式時隱藏解答 */
+
+    .md-zone ul,
+    .md-zone ol {
+      padding-left: 1.4rem;
+      margin: .5rem 0;
+    }
+
+    .md-zone li {
+      margin: .28rem 0;
+    }
+
+    .md-zone table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: .84rem;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border: 1px solid #dbe4ee;
+      border-radius: .75rem;
+    }
+
+    .md-zone th,
+    .md-zone td {
+      border-bottom: 1px solid #dbe4ee;
+      padding: .7rem .8rem;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .md-zone th {
+      color: #1e293b;
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .md-zone tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .solution-box {
+      margin-top: .55rem;
+      padding: .75rem .85rem;
+      color: #475569;
+      background: #f8fafc;
+      border: 1px solid #dbe4ee;
+      border-radius: .6rem;
+      font-size: .82rem;
+    }
+
+    .student-space {
+      display: none;
+      height: 84px;
+      margin-top: .6rem;
+      border: 1px dashed #94a3b8;
+      border-radius: .6rem;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 25px,
+        rgba(203, 213, 225, .65) 26px
+      );
+    }
+
     .hide-answers .solution-box {
       display: none !important;
     }
+
     .hide-answers .student-space {
-      display: block !important;
-      height: 80px;
-      border: 1px dashed #cbd5e1;
-      border-radius: 6px;
-      margin-top: 8px;
+      display: block;
     }
-    .student-space { display: none; }
+
+    .prompt-box {
+      position: relative;
+      margin-top: .8rem;
+      padding: 1rem;
+      padding-right: 7rem;
+      overflow: auto;
+      color: #e2e8f0;
+      background: #172033;
+      border-radius: .75rem;
+      font-family: "DM Sans", "Noto Sans TC", sans-serif;
+      font-size: .78rem;
+      line-height: 1.65;
+    }
+
+    .prompt-copy {
+      position: absolute;
+      top: .65rem;
+      right: .65rem;
+    }
+
+    .reflection-card {
+      padding: 1rem;
+      overflow: auto;
+      color: #334155;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: .75rem;
+      white-space: pre-wrap;
+      font-family: "DM Sans", "Noto Sans TC", sans-serif;
+      font-size: .86rem;
+      line-height: 1.75;
+    }
+
+    .toast-show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+      body { background: #ffffff !important; }
+      .resource-shell { min-height: auto !important; background: #ffffff !important; }
+      .sheet-box {
+        min-height: auto !important;
+        box-shadow: none !important;
+        border: 1px solid #94a3b8 !important;
+      }
+      #outputWrapper {
+        overflow: visible !important;
+        padding: 1.25rem !important;
+      }
+      .solution-box { break-inside: avoid; }
+      .table-scroll { overflow: visible !important; }
+      .md-zone table { min-width: 0 !important; }
+    }
   </style>
-</head>
-<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col font-sans">
-
-  <!-- 頂部簡潔導航 -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 no-print">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-          <i class="fa-solid fa-calculator"></i>
-        </div>
-        <div>
-          <h1 class="font-bold text-slate-800 text-base sm:text-lg leading-tight">小學數學備課與題庫製作庫</h1>
-          <p class="text-xs text-slate-500">免金鑰・難點分析・五步分層工作紙</p>
-        </div>
+  <script src="/_sdk/fbe2ebfd64647c54.data_sdk.js" type="text/javascript" integrity="sha512-vkTX6CfvpHc3WbjK+tFJCaDuw4ERA4aEV/e5/7+MMJPMTF4RJYCI6CAwJBT/gtDW+dba4uLSsPUgDjVDHWtgUQ=="></script>
+  <script src="/_sdk/fcb6dc01f91829ac.resizing_sdk.js" type="text/javascript" integrity="sha512-YK8JfnN705qaEaVhiL7pcVB2Rs/BbdX5yxV55Az8zT/1JanyEWTw9HqCF915m9iV1YEaoil8qsjJz03l1Kb0Ug=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="resource-shell">
+   <header data-template-id="top-header" class="canva-header sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur no-print">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+     <div class="flex items-center gap-3 min-w-0">
+      <div class="w-9 h-9 shrink-0 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-sm" aria-hidden="true"><i data-lucide="calculator" class="w-5 h-5"></i>
       </div>
-      <div class="flex items-center gap-2">
-        <button onclick="window.print()" class="px-3 py-1.5 text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg flex items-center gap-1.5 transition">
-          <i class="fa-solid fa-print"></i> 列印 / 轉為 PDF
-        </button>
-        <button onclick="copyToClipboard()" class="px-3 py-1.5 text-xs font-medium bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg flex items-center gap-1.5 transition">
-          <i class="fa-regular fa-copy"></i> 複製內容
-        </button>
+      <div class="min-w-0">
+       <h1 data-template-id="app-title" class="canva-text font-bold leading-tight"></h1>
+       <p data-template-id="app-subtitle" class="canva-text text-xs text-slate-500 mt-0.5"></p>
       </div>
+     </div>
+     <nav aria-label="工具列" class="flex items-center gap-2 shrink-0"><button id="printButton" type="button" data-template-id="print-button" class="canva-button control-button hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-100 text-slate-700 hover:bg-slate-200"> <i data-lucide="printer" class="w-3.5 h-3.5"></i> <span></span> </button> <button id="copyAllButton" type="button" data-template-id="copy-button" class="canva-button control-button inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border border-blue-100 bg-blue-50 text-blue-700 hover:bg-blue-100"> <i data-lucide="copy" class="w-3.5 h-3.5"></i> <span></span> </button>
+     </nav>
     </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex-1 w-full">
+   </header>
+   <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-5">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-
-      <!-- 左側簡約設定欄 -->
-      <aside class="lg:col-span-4 space-y-4 no-print">
-        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-            <span class="font-bold text-slate-800 text-sm flex items-center gap-2">
-              <i class="fa-solid fa-sliders text-blue-600"></i> 課題設定
-            </span>
-            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">已就緒</span>
-          </div>
-
-          <!-- 年級選擇 -->
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">年級</label>
-            <div class="grid grid-cols-3 gap-1.5" id="gradePills">
-              <button type="button" onclick="selectGrade('P1')" class="grade-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50">一年級 P1</button>
-              <button type="button" onclick="selectGrade('P2')" class="grade-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50">二年級 P2</button>
-              <button type="button" onclick="selectGrade('P3')" class="grade-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50">三年級 P3</button>
-              <button type="button" onclick="selectGrade('P4')" class="grade-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50">四年級 P4</button>
-              <button type="button" onclick="selectGrade('P5')" class="grade-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50">五年級 P5</button>
-              <button type="button" onclick="selectGrade('P6')" class="grade-btn py-1.5 text-xs rounded border border-blue-600 bg-blue-50 text-blue-700 font-bold">六年級 P6</button>
-            </div>
-          </div>
-
-          <!-- 課時長度選擇 (30分鐘 / 60分鐘) -->
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">課時長度</label>
-            <div class="grid grid-cols-2 gap-2" id="durationPills">
-              <button type="button" onclick="selectDuration(30)" id="btnDur30" class="dur-btn py-1.5 text-xs rounded border border-blue-600 bg-blue-50 text-blue-700 font-bold">
-                <i class="fa-regular fa-clock mr-1"></i>30 分鐘 (單堂)
-              </button>
-              <button type="button" onclick="selectDuration(60)" id="btnDur60" class="dur-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50">
-                <i class="fa-solid fa-hourglass-half mr-1"></i>60 分鐘 (連堂)
-              </button>
-            </div>
-          </div>
-
-          <!-- 課題選擇下拉 -->
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">香港課綱課題 (P1-P6)</label>
-            <select id="topicDropdown" class="w-full text-xs sm:text-sm rounded-lg border border-slate-200 p-2.5 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
-              <!-- 動態載入課題 -->
-            </select>
-          </div>
-
-          <!-- 自訂/補充輸入 -->
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">或自訂題目關鍵字</label>
-            <input type="text" id="customTopicInput" placeholder="例：圓周與圓面積" value="圓周與圓面積" 
-                   class="w-full text-xs sm:text-sm rounded-lg border border-slate-200 p-2.5 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-          </div>
-
-          <!-- 生成按鈕 -->
-          <button id="generateBtn" onclick="doGenerate()" 
-                  class="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-semibold text-sm rounded-lg shadow-sm transition flex items-center justify-center gap-2">
-            <i class="fa-solid fa-sparkles"></i>
-            <span>立即按課題生成</span>
-          </button>
+     <aside class="lg:col-span-4 space-y-4 no-print" aria-label="課題設定">
+      <section data-template-id="settings-panel" class="canva-panel bg-white rounded-xl p-5 border border-slate-200 shadow-sm">
+       <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+        <h2 data-template-id="settings-title" class="canva-text text-sm font-bold flex items-center gap-2"><i data-lucide="sliders-horizontal" class="w-4 h-4 text-blue-600"></i> <span></span></h2><span data-template-id="ready-tag" class="canva-tag text-xs px-2 py-0.5 rounded font-semibold"></span>
+       </div>
+       <div class="space-y-4">
+        <fieldset><legend data-template-id="grade-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5"></legend>
+         <div class="grid grid-cols-3 gap-1.5" id="gradePills"><button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P1">一年級 P1</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P2">二年級 P2</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P3">三年級 P3</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P4">四年級 P4</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P5">五年級 P5</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P6">六年級 P6</button>
+         </div>
+        </fieldset>
+        <fieldset><legend data-template-id="duration-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5"></legend>
+         <div class="grid grid-cols-2 gap-2"><button type="button" id="btnDur30" class="dur-btn selection-button control-button py-2 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-duration="30"> <i data-lucide="clock-3" class="w-3.5 h-3.5 inline-block mr-1"></i>30 分鐘 </button> <button type="button" id="btnDur60" class="dur-btn selection-button control-button py-2 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-duration="60"> <i data-lucide="timer" class="w-3.5 h-3.5 inline-block mr-1"></i>60 分鐘 </button>
+         </div>
+        </fieldset>
+        <div><label data-template-id="topic-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5" for="topicDropdown"></label> <select id="topicDropdown" class="w-full rounded-lg border border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-700 transition focus:bg-white focus:border-blue-500"></select>
         </div>
-
-        <!-- 模式切換小卡片 -->
-        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm flex items-center justify-between">
-          <div class="text-xs">
-            <div class="font-bold text-slate-700">顯示解答與步驟</div>
-            <div class="text-slate-400 text-[11px]">關閉後即切換為學生空白工作紙</div>
-          </div>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" id="toggleAnswerSwitch" checked onchange="toggleAnswers(this.checked)" class="sr-only peer">
-            <div class="w-10 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
-          </label>
-        </div>
-      </aside>
-
-      <!-- 右側主要內容展示區 -->
-      <section class="lg:col-span-8">
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm min-h-[650px] flex flex-col sheet-box">
-          
-          <!-- 頂部標籤導航 (No-print) -->
-          <div class="px-5 py-3 border-b border-slate-200 bg-slate-50/70 rounded-t-xl flex flex-wrap items-center justify-between gap-2 no-print">
-            <div class="flex items-center gap-1.5 overflow-x-auto py-1">
-              <button onclick="filterTab('all')" class="tab-btn px-2.5 py-1 text-xs rounded font-semibold bg-white shadow-sm border border-slate-200 text-blue-600" data-tab="all">全覽</button>
-              <button onclick="filterTab('mod1')" class="tab-btn px-2.5 py-1 text-xs rounded font-medium text-slate-600 hover:bg-slate-200/50" data-tab="mod1">1. 難點診斷</button>
-              <button onclick="filterTab('mod2')" class="tab-btn px-2.5 py-1 text-xs rounded font-medium text-slate-600 hover:bg-slate-200/50" data-tab="mod2">2. 詳細教案</button>
-              <button onclick="filterTab('mod3')" class="tab-btn px-2.5 py-1 text-xs rounded font-medium text-slate-600 hover:bg-slate-200/50" data-tab="mod3">3. 遊戲與指令</button>
-              <button onclick="filterTab('mod4')" class="tab-btn px-2.5 py-1 text-xs rounded font-medium text-slate-600 hover:bg-slate-200/50" data-tab="mod4">4. 分層工作紙</button>
-              <button onclick="filterTab('mod5')" class="tab-btn px-2.5 py-1 text-xs rounded font-medium text-slate-600 hover:bg-slate-200/50" data-tab="mod5">5. 反思筆記</button>
-            </div>
-            <div class="text-xs text-slate-500 font-medium" id="currentTopicLabel">
-              六年級 (P6) ・ 圓周與圓面積
-            </div>
-          </div>
-
-          <!-- 列印模式抬頭 (Print Only) -->
-          <div class="hidden print-only p-6 border-b border-slate-400">
-            <div class="text-center pb-2">
-              <h1 class="text-2xl font-bold tracking-wide">小學數學科 校本課堂學習工作紙</h1>
-              <p class="text-sm text-slate-600 mt-1" id="printHeaderTitle">課題：圓周與圓面積</p>
-            </div>
-            <div class="flex justify-between text-xs pt-3 font-medium">
-              <span>班別：六年級 _____ 班</span>
-              <span>姓名：____________________</span>
-              <span>座號：_____</span>
-              <span>日期：_____________</span>
-            </div>
-          </div>
-
-          <!-- 內容呈現區塊 -->
-          <div class="p-6 md:p-8 flex-1 overflow-y-auto" id="outputWrapper">
-            <!-- 載入中動畫 -->
-            <div id="loadingIndicator" class="hidden py-24 text-center">
-              <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent"></div>
-              <p class="text-xs text-slate-500 mt-2 font-medium">正在為你整理數學難點與分層題目...</p>
-            </div>
-
-            <!-- 實際渲染容器 -->
-            <div id="contentDisplay" class="md-zone space-y-6 text-sm">
-              <!-- 初始內容由 JS 動態填充 -->
-            </div>
-          </div>
-
-        </div>
+        <div><label data-template-id="custom-topic-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5" for="customTopicInput"></label> <input id="customTopicInput" data-template-id="custom-topic-input" class="canva-input w-full rounded-lg border border-slate-200 p-2.5 text-sm text-slate-700 transition focus:border-blue-500" type="text">
+        </div><button id="generateBtn" data-template-id="generate-button" type="button" class="canva-button control-button w-full py-2.5 px-4 rounded-lg font-semibold text-sm shadow-sm flex items-center justify-center gap-2"> <i data-lucide="sparkles" class="w-4 h-4"></i> <span></span> </button>
+       </div>
       </section>
-
+      <section data-template-id="answer-panel" class="canva-panel bg-white rounded-xl p-4 border border-slate-200 shadow-sm flex items-center justify-between gap-3">
+       <div>
+        <h2 data-template-id="answer-title" class="canva-text text-xs font-bold text-slate-700"></h2>
+        <p data-template-id="answer-description" class="canva-text text-[11px] text-slate-400 mt-0.5"></p>
+       </div><label class="relative inline-flex items-center cursor-pointer shrink-0" for="toggleAnswerSwitch"> <input id="toggleAnswerSwitch" type="checkbox" class="sr-only peer" checked> <span class="w-10 h-5 rounded-full bg-slate-200 peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-slate-300 after:bg-white after:transition-all peer-checked:after:translate-x-5"></span> <span class="sr-only">切換解答顯示</span> </label>
+      </section>
+     </aside>
+     <section class="lg:col-span-8" aria-label="教學資源內容">
+      <article class="sheet-box bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
+       <div class="no-print px-4 sm:px-5 py-3 border-b border-slate-200 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div class="flex gap-1.5 overflow-x-auto pb-1 sm:pb-0" role="tablist" aria-label="資源模組"><button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-slate-200 text-slate-600 hover:bg-white" data-tab="all">全覽</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod1">1. 難點診斷</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod2">2. 詳細教案</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod3">3. 遊戲與指令</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod4">4. 分層工作紙</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod5">5. 反思筆記</button>
+        </div>
+        <p id="currentTopicLabel" class="text-xs text-slate-500 font-medium whitespace-nowrap"></p>
+       </div>
+       <div class="hidden print-only p-6 border-b border-slate-400">
+        <div class="text-center">
+         <h1 data-template-id="print-title" class="canva-text font-bold text-xl"></h1>
+         <p id="printHeaderTitle" class="mt-1 text-sm text-slate-600"></p>
+        </div>
+        <div class="mt-4 flex justify-between gap-3 text-xs font-medium"><span>班別：______班</span> <span>姓名：________________</span> <span>座號：_____</span> <span>日期：____________</span>
+        </div>
+       </div>
+       <div id="outputWrapper" class="flex-1 p-5 sm:p-7">
+        <div id="loadingIndicator" class="hidden py-24 text-center" aria-live="polite">
+         <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent"></div>
+         <p data-template-id="loading-text" class="canva-text text-xs text-slate-500 mt-3 font-medium"></p>
+        </div>
+        <div id="contentDisplay" class="md-zone space-y-6" aria-live="polite"></div>
+       </div>
+      </article>
+     </section>
     </div>
-  </main>
-
-  <!-- 漂浮提示條 (替代 alert) -->
-  <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-lg opacity-0 transition-opacity pointer-events-none z-50 flex items-center gap-2">
-    <i class="fa-solid fa-circle-check text-emerald-400"></i>
-    <span id="toastMsg">已成功複製！</span>
+   </main>
+   <div id="toast" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2.5 text-xs text-white shadow-lg opacity-0 translate-y-2 pointer-events-none transition-all duration-200" role="status" aria-live="polite"><i data-lucide="circle-check" class="w-4 h-4 text-emerald-400"></i> <span id="toastMsg"></span>
+   </div>
   </div>
-
   <script>
-    // 香港小學數學課程核心課題庫 (P1-P6 教學目標總表)
     const SYLLABUS = {
-      "P1": ["認識1至20", "2至10的分解和合成", "基本加法", "基本減法", "個位和十位", "認識21至100", "加法(一)", "減法", "香港的硬幣", "認識平面圖形", "厘米"],
-      "P2": ["三位數", "加法(一)", "加法(二)", "減法", "角和直角", "銳角和鈍角", "米的認識", "2、5和10的乘法", "3和6的乘法", "報時", "四位數", "除法", "正方形和長方形"],
-      "P3": ["五位數", "乘法(一)", "除法(一)", "除法(二)", "平行四邊形和梯形", "三角形", "分數的認識(一)", "同分母分數加法和減法", "升和毫升", "棒形圖"],
-      "P4": ["乘法(一)", "除法(一)", "整除性", "倍數", "因數", "公因數和最大公因數", "公倍數和最小公倍數", "周界的認識", "正方形的周界", "長方形的周界", "同分母分數加法", "同分母分數減法", "長方形和正方形的面積", "小數的認識"],
-      "P5": ["異分母分數加法", "異分母分數減法", "平行四邊形的面積", "三角形的面積", "梯形的面積", "多邊形的面積", "分數乘法", "代數符號", "分數除法", "體積的量度", "簡易方程(一)", "簡易方程(二)"],
-      "P6": ["小數除法", "百分數的認識", "百分數的應用", "圓周(一)", "圓周(二)", "圓面積(一)", "圓面積(二)", "圓周與圓面積", "速率", "行程圖", "簡易方程(一)", "簡易方程(二)"]
+      P1: ["認識1至20", "2至10的分解和合成", "基本加法", "基本減法", "個位和十位", "認識21至100", "加法(一)", "減法", "香港的硬幣", "認識平面圖形", "厘米"],
+      P2: ["三位數", "加法(一)", "加法(二)", "減法", "角和直角", "銳角和鈍角", "米的認識", "2、5和10的乘法", "3和6的乘法", "報時", "四位數", "除法", "正方形和長方形"],
+      P3: ["五位數", "乘法(一)", "除法(一)", "除法(二)", "平行四邊形和梯形", "三角形", "分數的認識(一)", "同分母分數加法和減法", "升和毫升", "棒形圖"],
+      P4: ["乘法(一)", "除法(一)", "整除性", "倍數", "因數", "公因數和最大公因數", "公倍數和最小公倍數", "周界的認識", "正方形的周界", "長方形的周界", "同分母分數加法", "同分母分數減法", "長方形和正方形的面積", "小數的認識"],
+      P5: ["異分母分數加法", "異分母分數減法", "平行四邊形的面積", "三角形的面積", "梯形的面積", "多邊形的面積", "分數乘法", "代數符號", "分數除法", "體積的量度", "簡易方程(一)", "簡易方程(二)"],
+      P6: ["小數除法", "百分數的認識", "百分數的應用", "圓周(一)", "圓周(二)", "圓面積(一)", "圓面積(二)", "圓周與圓面積", "速率", "行程圖", "簡易方程(一)", "簡易方程(二)"]
     };
 
-    // 高頻重點課題之精準五步模組資料庫（使用標準無亂碼符號）
-    const EXPERT_MODULES = {
-      "圓周與圓面積": {
-        mod1: `
-### 一、 課題難點診斷與認知障礙分析
-
-| 難點維度 | 學生常見迷思概念／操作障礙 | 成因剖析與對策 |
-| :--- | :--- | :--- |
-| **難點 1：公式混淆** | 計算圓周誤用半徑（寫成 $\\pi r$），或算面積直接將直徑平方（寫成 $\\pi d^2$）。 | 混淆「一維長度（$\\pi d$）」與「二維面積（$\\pi r^2$）」，死記公式符號。 |
-| **難點 2：半圓周界漏加直徑** | 計算半圓周界時只算圓弧長度（$\\pi d \\div 2$），遺漏底部的直徑邊界。 | 誤將「圓周的一半」等同於「半圓的周界」，未建立封閉圖形邊界概念。 |
-| **難點 3：逆向運算與複合圖形** | 已知圓周求面積時步驟卡關；面對陰影部分面積時無法自主辨別「大形減小形」。 | 缺乏 $C \\to r \\to A$ 逆向雙重運算概念，空間割補重組能力不足。 |
-`,
-        getMod2: function(duration) {
-          if (duration === 30) {
-            return `
-### 二、 詳細教學計劃（課時：30 分鐘 緊湊單堂課）
-
-#### 【教學目標】
-1. 能精準區分圓周（一維邊界，$\\pi d$）與圓面積（二維平面，$\\pi r^2$）的本質差異。
-2. 掌握半圓周界「弧長加直徑」的計算規範，克服漏加直徑障礙。
-3. 熟練基礎逆向求半徑及分層練習反饋。
-
----
-
-| 節奏與時間 | 教學環節與內容 | 教師關鍵提問與引導語 | 學生學習活動與難點突破 |
-| :--- | :--- | :--- | :--- |
-| **00-03 分鐘**<br>快速導入 | **生活問題速問**<br>展示圓形時鐘：若外圍貼彩帶 vs 鐘面塗油漆。 | 「哪一個是量邊界長度？哪一個是算平面大小？公式各要用半徑還是直徑？」 | 迅速口答，建立「圓周一維（$\\pi d$）、面積二維（$\\pi r^2$）」認知，突破難點 1。 |
-| **03-11 分鐘**<br>核心探究 | **公式算理提煉**<br>板書比對圓周 $C = \\pi d = 2\\pi r$ 與剪拼長方形推導的面積 $A = \\pi r^2$。 | 「長方形的長是圓周的一半（$\\pi r$），闊是半徑（$r$），所以半徑相乘了幾次？」 | 觀看幾何動態示意，複述核心公式口訣。 |
-| **11-19 分鐘**<br>難點攻堅 | **手指描邊法破解半圓周界**<br>出示直徑 $14\\text{ cm}$ 半圓，請全體用手指沿外圍繞行一周。 | 「若只計算 $\\pi d \\div 2$，你的手指回到起點了嗎？還缺了哪條平平的邊？」 | 用彩筆勾勒弧線與直徑底邊，牢記口訣：「**弧長加直徑，封閉才是周界**」，突破難點 2。 |
-| **19-26 分鐘**<br>分層快練 | **隨堂限時搶答與逆向演算**<br>完成第 1、3 題核心練習；演示已知 $C = 62.8\\text{ cm}$ 逆求 $r$。 | 「已知周界求面積，中間必須先找到哪把『鑰匙』？」 | 小白板即時作答，建立 $C \\xrightarrow{\\div \\pi \\div 2} r \\xrightarrow{\\times r \\times \\pi} A$ 路徑，突破難點 3。 |
-| **26-30 分鐘**<br>總結歸納 | **全課總結與易錯防空洞**<br>快速口答 2 道陷阱檢測題，布置反思筆記。 | 「今天誰能告訴大家，半圓周界最容易失分的是哪裡？」 | 齊聲複述警示口訣，記錄反思要點。 |
-
----
-
-#### 【板書設計（30 分鐘精簡版）】
-\`\`\`text
-┌─────────────────────────────────────────────────────────────┐
-│ 課題：圓周與圓面積 (30 分鐘速記)                                │
-│ 1. 圓周 (長度，cm/m)                2. 圓面積 (平面，cm²/m²)  │
-│    C = πd  或  C = 2πr                 A = π × r × r = πr²          │
-│ ─────────────────────────────────────────────────────────── │
-│ ★ 核心陷阱警示：半圓周界 = (πd ÷ 2) + d  (切記加回直徑！)     │
-│ ★ 逆向鑰匙：周界 C ──÷π÷2──> 半徑 r ──> 圓面積 A             │
-└─────────────────────────────────────────────────────────────┘
-\`\`\`
-`;
-          } else {
-            return `
-### 二、 詳細教學計劃（課時：60 分鐘 深入探究連堂課）
-
-#### 【教學目標】
-1. 深入理解圓周率 $\\pi$ 的由來，能以剪拼長方形幾何表象自主推導圓面積公式。
-2. 徹底消除半圓及組合圖形「漏加邊界」迷思，建立嚴密的幾何邊界封閉概念。
-3. 熟練掌握已知周界逆求面積（$C \\to r \\to A$）及複合圖形（正方形內切圓、陰影割補）的多元解題策略。
-4. 透過互動遊戲與分組合作，提升數學溝通、除錯與問題解決能力。
-
----
-
-| 節奏與時間 | 教學環節與內容 | 教師關鍵提問與引導語 | 學生學習活動與難點突破 |
-| :--- | :--- | :--- | :--- |
-| **00-08 分鐘**<br>情境創設 | **生活實例與舊知連結**<br>展示披薩切分、摩天輪旋轉與時鐘表面；複習直徑與半徑關係。 | 「要在圓形花壇圍一圈圍欄與鋪滿草皮，分別需要計算甚麼？單位的維度有何不同？」 | 學生分組討論，辨認「圓周＝一維邊界線段長度」與「面積＝二維平面鋪滿」，突破難點 1。 |
-| **08-22 分鐘**<br>深度探究 | **動手實驗與公式推導**<br>1. 滾動圓罐測量周長推導 $\\frac{C}{d} \\approx \\pi$<br>2. 將 16 等份圓形剪拼成近似長方形。 | 「近似長方形的長是圓的哪一部分？闊又是甚麼？長乘闊為什麼等於 $\\pi \\times r \\times r$？」 | 學生親自動手拼砌教具，以視覺表象深刻內化 $A = \\pi r^2$ 的推導邏輯。 |
-| **22-34 分鐘**<br>雙難點攻堅 | **描邊破解與逆向路徑建構**<br>1. 出示半圓形與四分之一圓，學生實體描邊。<br>2. 板書逆向題：已知 $C = 88\\text{ cm}$，求面積。 | 「只算 $\\pi d \\div 2$ 到底算完了沒有？缺了哪一部分？」「如果已知周界，如何一步步逆推到面積？」 | 1. 學生用彩筆標註直徑底邊，確立「半圓周界＝弧長＋直徑」，突破難點 2。<br>2. 繪製 $C \\xrightarrow{\\div \\pi \\div 2} r \\xrightarrow{\\times r \\times \\pi} A$ 雙重轉化圖，突破難點 3。 |
-| **34-44 分鐘**<br>遊戲鞏固 | **課堂小組互動遊戲**<br>開展「公式快拍手」（考驗公式辨別）與「周界巡邏員」（找出漏算邊界）。 | 「巡邏員請注意！圖形中每一條封閉的邊界，你都派算式巡邏到了嗎？」 | 小組搶答對戰，現場辨別直徑、半徑與複合圖形周界，將知識轉化為實戰技能。 |
-| **44-54 分鐘**<br>分層實作 | **分層學習工作紙練習**<br>學生獨立完成 A 初階、B 中階及 C 思考題（正方形內切圓陰影）。 | 「求四個角的陰影面積，能用哪兩個我們學過的圖形相減？周界又包含哪些部分？」 | 學生自主選擇挑戰層級，教師巡視實施拔尖補底，針對個別障礙即時指導。 |
-| **54-60 分鐘**<br>昇華總結 | **成果展示與反思筆記**<br>挑選典型解法與易錯範例板書投影，引導填寫反思筆記。 | 「今天誰能分享一道最容易讓人掉進陷阱的題目？」 | 學生互評，總結「邊界防漏」與「逆向三步法」，完成課後反思筆記卡。 |
-
----
-
-#### 【板書設計（60 分鐘連堂詳盡版）】
-\`\`\`text
-┌─────────────────────────────────────────────────────────────┐
-│ 課題：圓周與圓面積 (60 分鐘連堂探究)                             │
-│ 1. 圓周率與圓周 (一維長度，cm/m)     2. 圓面積推導 (二維平面，cm²/m²)  │
-│    π = 周長 ÷ 直徑 ≈ 3.14             剪拼長方形：長=πr, 闊=r       │
-│    C = πd = 2πr                        A = 長 × 闊 = πr × r = πr²    │
-│ ─────────────────────────────────────────────────────────── │
-│ ★ 易錯專區 (幾何邊界必封閉)           ★ 複合圖形與逆向解題思維       │
-│   半圓周界 = (πd ÷ 2) + d (必加直徑!)   1. 逆向路徑: C ──÷π÷2──> r ──> A│
-│   四分一圓周界 = (πd ÷ 4) + 2r         2. 陰影面積: 外大形 － 內小形  │
-└─────────────────────────────────────────────────────────────┘
-\`\`\`
-`;
-          }
-        },
-        mod3: `
-### 三、 鞏固遊戲設計與生成指令
-
-#### 🎮 遊戲 1：公式快拍手（對焦難點 1）
-* **課堂模式**：雙人對戰。展示條件卡（如「$r = 3\\text{ cm}$ 求周界」），桌上放「$2\\pi r$」與「$\\pi r^2$」兩張拍牌，先拍對者得分。
-
-#### 🎮 遊戲 2：周界巡邏員（對焦難點 2）
-* **課堂模式**：投影展示半圓形跑道、扇形花圃等圖形，學生必須在小白板畫出完整邊界路徑，並寫出包含直徑/半徑的完整算式。
-
----
-
-### 💻 遊戲平台生成指令（Prompt）
-*(可直接點擊下方複製，貼至 Wordwall、Kahoot 或 AI 工具一鍵建立互動題庫)*
-
-<div class="bg-slate-800 text-slate-100 p-4 rounded-lg my-3 text-xs font-mono relative">
-<button onclick="copySnippet('promptGame1')" class="absolute top-2.5 right-2.5 px-2 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-sans flex items-center gap-1">
-  <i class="fa-regular fa-copy"></i> 複製指令
-</button>
-<pre id="promptGame1" class="whitespace-pre-wrap">請為小學六年級數學課題「圓周與圓面積」生成 5 題 Wordwall / Kahoot 選擇題：
-1. 題型要求：
-   - 2題辨別直徑與半徑（圓周公式 vs 面積公式）
-   - 2題半圓周界陷阱題（特別強調是否有加回直徑）
-   - 1題已知圓周逆求半徑題
-2. 格式規範：
-   - 每題提供4個選項（A, B, C, D），標註正確答案
-   - π 取值一律標明為 3.14 或 22/7
-   - 附上一句精簡的陷阱解析（例：「注意：半圓周界必須加上底部的直徑邊界！」）</pre>
-</div>
-
-<div class="bg-slate-800 text-slate-100 p-4 rounded-lg my-3 text-xs font-mono relative">
-<button onclick="copySnippet('promptGame2')" class="absolute top-2.5 right-2.5 px-2 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-sans flex items-center gap-1">
-  <i class="fa-regular fa-copy"></i> 複製指令
-</button>
-<pre id="promptGame2" class="whitespace-pre-wrap">【課堂口頭互動指令（教師主持用語）】：
-「全班準備！現在屏幕上出現的是直徑 10cm 的半圓形。
-請在你的小白板寫出算式：
-第一步，先算彎彎的弧線長度；
-第二步，千萬別忘記那條平平的邊！
-3、2、1，亮板！誰忘了加 10 的請起立接受挑戰！」</pre>
-</div>
-`,
-        mod4: `
-### 四、 分層學習工作紙（除特別註明外，$\\pi$ 取 $3.14$ 或 $\\frac{22}{7}$）
-
-**【A 初階基本題】**
-1. 一個圓形花壇的半徑是 $5\\text{ m}$，它的圓周是多少 $\\text{m}$？面積是多少 $\\text{m}^2$？（$\\pi$ 取 $3.14$）
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【解答步驟】</strong><br>
-圓周 $= 2 \\times 3.14 \\times 5 = 31.4\\text{ m}$<br>
-面積 $= 3.14 \\times 5 \\times 5 = 78.5\\text{ m}^2$
-</div>
-<div class="student-space"></div>
-
-2. 一個圓形杯墊的直徑是 $14\\text{ cm}$，它的圓周是多少 $\\text{cm}$？面積是多少 $\\text{cm}^2$？（$\\pi$ 取 $\\frac{22}{7}$）
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【解答步驟】</strong><br>
-半徑 $r = 14 \\div 2 = 7\\text{ cm}$<br>
-圓周 $= \\frac{22}{7} \\times 14 = 44\\text{ cm}$<br>
-面積 $= \\frac{22}{7} \\times 7 \\times 7 = 154\\text{ cm}^2$
-</div>
-<div class="student-space"></div>
-
-**【B 中階進階題】**
-3. 一個半徑為 $7\\text{ cm}$ 的半圓形紙片，求它的周界。（$\\pi$ 取 $\\frac{22}{7}$）
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【解答步驟】</strong><br>
-直徑 $d = 7 \\times 2 = 14\\text{ cm}$<br>
-半圓周界 $= (\\frac{22}{7} \\times 14 \\div 2) + 14 = 22 + 14 = 36\\text{ cm}$ *(注意加回直徑)*
-</div>
-<div class="student-space"></div>
-
-4. 一條長 $88\\text{ cm}$ 的鐵絲剛好圍成一個圓形。求這個圓形的面積。（$\\pi$ 取 $\\frac{22}{7}$）
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【解答步驟】</strong><br>
-直徑 $= 88 \\div \\frac{22}{7} = 28\\text{ cm}$，半徑 $r = 14\\text{ cm}$<br>
-面積 $= \\frac{22}{7} \\times 14 \\times 14 = 616\\text{ cm}^2$
-</div>
-<div class="student-space"></div>
-
-5. 診斷改錯題：小聰計算直徑為 $10\\text{ cm}$ 的半圓面積，算式為：$3.14 \\times (10 \\div 2) \\times (10 \\div 2) = 78.5\\text{ cm}^2$。請圈出錯誤並更正。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【解答步驟】</strong><br>
-錯誤：小聰算出整圓面積，未有除以 2。<br>
-正確算式：$78.5 \\div 2 = 39.25\\text{ cm}^2$
-</div>
-<div class="student-space"></div>
-
-**【C 高階思考題】**
-6. 邊長為 $20\\text{ cm}$ 的正方形內緊貼著一個最大的內切圓。
-(a) 求正方形內部四個角所圍成的陰影部分面積。（$\\pi$ 取 $3.14$）
-(b) 沿著陰影部分邊緣走一圈，求陰影圖形的周界。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【解答步驟】</strong><br>
-(a) 正方形面積 $= 20 \\times 20 = 400\\text{ cm}^2$；圓面積 $= 3.14 \\times 10 \\times 10 = 314\\text{ cm}^2$。<br>
-&emsp;&nbsp;陰影面積 $= 400 - 314 = 86\\text{ cm}^2$。<br>
-(b) 陰影周界包含外圍正方形周界與內側圓周：<br>
-&emsp;&nbsp;總周界 $= (20 \\times 4) + (3.14 \\times 20) = 80 + 62.8 = 142.8\\text{ cm}$。
-</div>
-<div class="student-space"></div>
-`,
-        mod5: `
-### 五、 課後鞏固反思筆記卡
-
-\`\`\`text
-┌─────────────────────────────────────────────────────────────┐
-│               【六年級數學反思筆記：圓周與圓面積】                │
-├─────────────────────────────────────────────────────────────┤
-│ 1. 核心公式：                                               │
-│    ・圓周（長度）： C = πd  或  C = 2πr       (單位：cm, m)   │
-│    ・面積（平面）： A = π × r × r = πr²       (單位：cm², m²) │
-├─────────────────────────────────────────────────────────────┤
-│ 2. 易錯檢查：                                               │
-│    [   ] 求半圓周界時，我有記得加上「直徑」嗎？                 │
-│    [   ] 題目給的是「直徑」還是「半徑」？                       │
-│    [   ] 已知圓周求面積時，是否先除以 π 及除以 2 算出半徑？      │
-└─────────────────────────────────────────────────────────────┘
-\`\`\`
-`
-      }
+    const state = {
+      grade: "P6",
+      duration: 30,
+      activeTab: "all",
+      topic: "圓周與圓面積",
+      showAnswers: true,
+      generated: null,
+      toastTimer: null
     };
 
-    // 當前全域狀態
-    let currentGrade = "P6";
-    let currentDuration = 30; // 預設 30 分鐘
-    let activeTab = "all";
-    let generatedData = null;
+    const els = {
+      topicDropdown: document.getElementById("topicDropdown"),
+      customTopicInput: document.getElementById("customTopicInput"),
+      contentDisplay: document.getElementById("contentDisplay"),
+      loadingIndicator: document.getElementById("loadingIndicator"),
+      currentTopicLabel: document.getElementById("currentTopicLabel"),
+      printHeaderTitle: document.getElementById("printHeaderTitle"),
+      toast: document.getElementById("toast"),
+      toastMsg: document.getElementById("toastMsg"),
+      generateButton: document.getElementById("generateBtn")
+    };
 
-    window.addEventListener("DOMContentLoaded", () => {
-      populateTopics("P6");
-      // 預設載入示範課題
-      doGenerate();
-    });
-
-    // 切換課時長度 (30分鐘 / 60分鐘)
-    function selectDuration(mins) {
-      currentDuration = mins;
-      document.querySelectorAll(".dur-btn").forEach(btn => {
-        btn.className = "dur-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50";
-      });
-      const activeBtn = mins === 30 ? document.getElementById("btnDur30") : document.getElementById("btnDur60");
-      if (activeBtn) {
-        activeBtn.className = "dur-btn py-1.5 text-xs rounded border border-blue-600 bg-blue-50 text-blue-700 font-bold";
-      }
-      // 切換後自動重新生成教案
-      doGenerate();
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
     }
 
-    // 切換年級標籤
-    function selectGrade(grade) {
-      currentGrade = grade;
-      document.querySelectorAll(".grade-btn").forEach(btn => {
-        btn.className = "grade-btn py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50";
-      });
-      event.currentTarget.className = "grade-btn py-1.5 text-xs rounded border border-blue-600 bg-blue-50 text-blue-700 font-bold";
-      populateTopics(grade);
+    function formatText(text) {
+      return escapeHtml(text)
+        .replace(/\n/g, "<br>")
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
     }
 
-    // 依年級填充下拉清單
     function populateTopics(grade) {
-      const select = document.getElementById("topicDropdown");
-      select.innerHTML = "";
       const topics = SYLLABUS[grade] || [];
-      topics.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t;
-        opt.textContent = t;
-        select.appendChild(opt);
+      els.topicDropdown.replaceChildren();
+
+      topics.forEach((topic) => {
+        const option = document.createElement("option");
+        option.value = topic;
+        option.textContent = topic;
+        els.topicDropdown.appendChild(option);
       });
-      // 預設第一項或圓周
-      if (grade === "P6") {
-        select.value = "圓周與圓面積";
-        document.getElementById("customTopicInput").value = "圓周與圓面積";
-      } else {
-        select.value = topics[0];
-        document.getElementById("customTopicInput").value = topics[0];
-      }
+
+      const preferred = grade === "P6" ? "圓周與圓面積" : topics[0];
+      state.topic = preferred;
+      els.topicDropdown.value = preferred;
+      els.customTopicInput.value = preferred;
     }
 
-    document.getElementById("topicDropdown").addEventListener("change", (e) => {
-      document.getElementById("customTopicInput").value = e.target.value;
-    });
+    function updateSelectedButtons() {
+      document.querySelectorAll(".grade-btn").forEach((button) => {
+        const selected = button.dataset.grade === state.grade;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
 
-    // 執行生成
-    function doGenerate() {
-      const topic = document.getElementById("customTopicInput").value.trim() || "數學綜合題";
-      
-      // 更新介面標籤
-      document.getElementById("currentTopicLabel").textContent = `${currentGrade} 數學科 ・ ${topic} (${currentDuration}分鐘教案)`;
-      document.getElementById("printHeaderTitle").textContent = `年級：${currentGrade} ｜ 課題：${topic} ｜ 課時：${currentDuration}分鐘`;
+      document.querySelectorAll(".dur-btn").forEach((button) => {
+        const selected = Number(button.dataset.duration) === state.duration;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
 
-      const loading = document.getElementById("loadingIndicator");
-      const display = document.getElementById("contentDisplay");
-
-      loading.classList.remove("hidden");
-      display.innerHTML = "";
-
-      setTimeout(() => {
-        if (EXPERT_MODULES[topic]) {
-          const exp = EXPERT_MODULES[topic];
-          generatedData = {
-            mod1: exp.mod1,
-            mod2: typeof exp.getMod2 === "function" ? exp.getMod2(currentDuration) : exp.mod2,
-            mod3: exp.mod3,
-            mod4: exp.mod4,
-            mod5: exp.mod5
-          };
-        } else {
-          generatedData = buildUniversalPackage(currentGrade, topic, currentDuration);
-        }
-        loading.classList.add("hidden");
-        renderActiveView();
-        showToast(`已成功切換為 ${currentDuration} 分鐘教學資源！`);
-      }, 200);
+      document.querySelectorAll(".tab-btn").forEach((button) => {
+        const selected = button.dataset.tab === state.activeTab;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-selected", String(selected));
+      });
     }
 
-    function buildUniversalPackage(grade, topic, duration) {
-      const is30 = duration === 30;
-      const pacingTable = is30 ? `
-| 節奏與時間 | 教學環節與內容 | 教師關鍵提問與引導語 | 學生學習活動 |
-| :--- | :--- | :--- | :--- |
-| **00-03 分鐘**<br>引起動機 | **生活問題引入**<br>創設與「${topic}」相關的生活實例。 | 「日常生活中，甚麼時候會遇到這個計算問題？」 | 觀看示例圖片或生活實物，迅速聚焦主題。 |
-| **03-12 分鐘**<br>概念探究 | **算理建立與步驟推導**<br>透過圖解直觀示範核心步驟。 | 「第一步我們要先確定甚麼？為甚麼不能直接運算？」 | 觀察教師板書，在筆記上記錄關鍵運算規則。 |
-| **12-20 分鐘**<br>難點突破 | **典型錯誤診斷與剖析**<br>出示學生最常犯的典型錯誤步驟。 | 「這個步驟哪裡出了問題？如何修正？」 | 小組快速挑出陷阱，並在小白板寫出正解。 |
-| **20-26 分鐘**<br>隨堂快練 | **分層練習與即時反饋**<br>限時完成工作紙題型 A 與 B。 | 「請兩位同學分享你們的解題步驟。」 | 獨立完成核心題目，進行自評與互評。 |
-| **26-30 分鐘**<br>總結評估 | **知識口訣整理**<br>師生共同總結本課解題口訣。 | 「今天學到的最重要一句話是甚麼？」 | 口答複述重點，標記易錯點。 |
-` : `
-| 節奏與時間 | 教學環節與內容 | 教師關鍵提問與引導語 | 學生學習活動 |
-| :--- | :--- | :--- | :--- |
-| **00-08 分鐘**<br>情境導入 | **生活問題與舊知回顧**<br>以情境大圖或實物創設探究問題。 | 「回想之前學過的知識，兩者有甚麼關聯？怎樣解決眼前的新問題？」 | 全班討論，提取先備知識，激發探究動機。 |
-| **08-22 分鐘**<br>深入探究 | **動手操作與算理推導**<br>分組透過教具、圖解或畫圖推導法則。 | 「如果改變其中的數值，規則依然成立嗎？為甚麼要這樣列式？」 | 學生分組動手操作、歸納運算法則並嘗試自主總結。 |
-| **22-34 分鐘**<br>難點攻堅 | **錯例辨析與多重解法**<br>對比 2-3 種不同解法，突破深層迷思。 | 「哪種方法更簡潔？哪裡最容易出現粗心錯誤？」 | 學生擔任「小法官」診斷錯因，建立多角度解題能力。 |
-| **34-44 分鐘**<br>遊戲鞏固 | **課堂互動遊戲競技**<br>利用問答遊戲或小組對戰驗證所學。 | 「全班準備搶答！注意題目的限制條件與單位陷阱！」 | 全員參與互動遊戲，在趣味競賽中強化運算速度與熟練度。 |
-| **44-54 分鐘**<br>分層實踐 | **分層工作紙獨立練習**<br>分流挑戰初階 A、進階 B 與思考 C 題型。 | 「遇到難題時，先畫線段圖或圖解試試看。」 | 獨立練習，教師針對不同程度學生進行精準拔尖與補底。 |
-| **54-60 分鐘**<br>昇華反思 | **成果展示與筆記整理**<br>小組代表展示思考歷程，完成反思卡。 | 「今天誰能分享一個你今天克服的盲點？」 | 學生梳理思維脈絡，填寫課後反思筆記卡並互評。 |
-`;
+    function updateMeta() {
+      els.currentTopicLabel.textContent = `${state.grade} 數學科 ・ ${state.topic} ・ ${state.duration}分鐘教案`;
+      els.printHeaderTitle.textContent = `年級：${state.grade} ｜ 課題：${state.topic} ｜ 課時：${state.duration}分鐘`;
+    }
+
+    function getCircleModules(duration) {
+      const teachingPlan = duration === 30
+        ? `
+          <h2>二、詳細教學計劃（30 分鐘緊湊單堂課）</h2>
+          <h3>教學目標</h3>
+          <ol>
+            <li>區分圓周的長度概念與圓面積的平面概念。</li>
+            <li>掌握半圓周界必須「弧長加直徑」的規則。</li>
+            <li>能由圓周逆向求出半徑，再計算圓面積。</li>
+          </ol>
+          ${lessonTable([
+            ["00–03 分鐘", "生活問題速問", "圓形時鐘外圍貼彩帶與鐘面塗色，分別量甚麼？", "辨別圓周與面積。"],
+            ["03–11 分鐘", "公式算理提煉", "圓周 C = πd = 2πr；面積 A = πr²。", "比較直徑、半徑與單位。"],
+            ["11–19 分鐘", "描邊法破解半圓周界", "手指沿半圓外圍走一圈，還缺哪條邊？", "指出弧長外必須加上直徑。"],
+            ["19–26 分鐘", "分層快練", "已知 C = 62.8cm，如何求面積？", "完成 C → r → A 逆向路徑。"],
+            ["26–30 分鐘", "總結與檢核", "半圓周界最易遺漏甚麼？", "口答並記錄易錯點。"]
+          ])}
+          <h3>板書設計</h3>
+          <div class="reflection-card">課題：圓周與圓面積
+圓周（長度）：C = πd = 2πr
+圓面積（平面）：A = πr²
+
+★ 半圓周界 = 半圓弧長 + 直徑
+★ 逆向步驟：圓周 C → 半徑 r → 面積 A</div>`
+        : `
+          <h2>二、詳細教學計劃（60 分鐘深入探究連堂課）</h2>
+          <h3>教學目標</h3>
+          <ol>
+            <li>理解圓周率與圓面積公式的幾何意義。</li>
+            <li>建立複合圖形及半圓周界的完整邊界概念。</li>
+            <li>熟練逆向運算與割補法解題。</li>
+            <li>透過小組遊戲提升數學溝通與除錯能力。</li>
+          </ol>
+          ${lessonTable([
+            ["00–08 分鐘", "情境與舊知連結", "圍欄與鋪草皮分別要計算甚麼？", "區分一維與二維量。"],
+            ["08–22 分鐘", "動手推導公式", "剪拼圓形後，近似長方形的長與闊是甚麼？", "以剪拼理解 A = πr²。"],
+            ["22–34 分鐘", "描邊與逆向解題", "半圓的封閉邊界包括甚麼？", "畫出 C → r → A 路徑。"],
+            ["34–44 分鐘", "小組互動遊戲", "每條外圍邊界都有被算到嗎？", "進行公式快拍手及周界巡邏。"],
+            ["44–54 分鐘", "分層工作紙", "可用哪兩個圖形相減？", "完成 A、B、C 級題目。"],
+            ["54–60 分鐘", "展示與反思", "今天最容易跌入的陷阱是甚麼？", "分享策略及完成反思。"]
+          ])}
+          <h3>板書設計</h3>
+          <div class="reflection-card">課題：圓周與圓面積
+π = 圓周 ÷ 直徑
+C = πd = 2πr
+A = πr²
+
+★ 半圓周界 = (πd ÷ 2) + d
+★ 陰影面積 = 外大形面積 − 內小形面積
+★ 逆向：C → r → A</div>`;
 
       return {
         mod1: `
-### 一、 課題難點診斷與認知障礙分析
-
-| 難點維度 | 學生常見迷思概念／操作障礙 | 成因剖析與對策 |
-| :--- | :--- | :--- |
-| **難點 1：核心概念模糊** | 對「${topic}」的幾何特徵或運算法則理解不透，容易死套公式。 | 缺乏具體教具表象支撐。透過圖像引導建立心智模型。 |
-| **難點 2：計算步驟與符號轉換** | 運算步驟複雜時容易跳步、單位換算錯誤或忘記化簡。 | 操作規則未達到熟練自動化。需給予口訣與結構化支架。 |
-| **難點 3：情境建模與逆向推論** | 面對文字題目無法提取已知與未知量，不知如何列式。 | 缺乏圖解轉化思維。強化「畫線段圖或圖解」策略。 |
-`,
-        mod2: `
-### 二、 詳細教學計劃（課時：${duration} 分鐘 ${is30 ? "緊湊單堂課" : "深入連堂課"}）
-
-#### 【教學目標】
-1. 理解「${topic}」的核心數學概念與運算邏輯。
-2. 掌握標準解題步驟，能準確解答情境題目。
-3. 建立自查與驗算習慣，克服典型認知盲點。
-
----
-${pacingTable}
----
-
-#### 【板書設計】
-\`\`\`text
-┌─────────────────────────────────────────────────────────────┐
-│ 課題：${topic} (${duration} 分鐘版)                                  │
-│ 1. 核心概念與公式                      2. 解題關鍵三部曲      │
-│    ・...................                  ① 審題抓條件        │
-│    ・...................                  ② 列式重算理        │
-│ ─────────────────────────────────────────────────────────── │
-│ ★ 易錯警示燈                           ③ 驗算防陷阱        │
-│    ・常見盲點：注意單位、步驟與逆向推算                     │
-└─────────────────────────────────────────────────────────────┘
-\`\`\`
-`,
+          <section>
+            <h2>一、課題難點診斷與認知障礙分析</h2>
+            ${diagnosticTable([
+              ["公式混淆", "計算圓周時誤用半徑，或計算面積時直接把直徑平方。", "比較「一維長度」與「二維面積」，配合公式卡分類。"],
+              ["半圓周界漏加直徑", "只計算半圓弧長，遺漏直徑底邊。", "運用手指描邊法，強調封閉圖形的完整邊界。"],
+              ["逆向運算卡關", "已知圓周時，未能先求半徑再求面積。", "以 C → r → A 箭咀圖建立兩步運算支架。"]
+            ])}
+          </section>`,
+        mod2: `<section>${teachingPlan}</section>`,
         mod3: `
-### 三、 鞏固遊戲設計與生成指令
-
-* **基礎遊戲：概念配對卡**（辨別「${topic}」基礎條件）
-* **進階遊戲：除錯小法官**（挑出題幹陷阱與計算盲區）
-
----
-
-### 💻 遊戲平台生成指令（Prompt）
-
-<div class="bg-slate-800 text-slate-100 p-4 rounded-lg my-3 text-xs font-mono relative">
-<button onclick="copySnippet('promptUniversal')" class="absolute top-2.5 right-2.5 px-2 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-sans flex items-center gap-1">
-  <i class="fa-regular fa-copy"></i> 複製指令
-</button>
-<pre id="promptUniversal" class="whitespace-pre-wrap">請為「${grade} 數學科 - ${topic}」設計 5 道 Wordwall 互動選擇題：
-1. 涵蓋概念題（2題）、計算應用題（2題）、改錯陷阱題（1題）
-2. 題目語言符合香港小學課程常用繁體中文數學術語
-3. 標明正確答案與各選項的解析說明</pre>
-</div>
-`,
+          <section>
+            <h2>三、鞏固遊戲設計與生成指令</h2>
+            <h3>遊戲 1：公式快拍手</h3>
+            <p>雙人對戰，教師展示條件卡，例如「半徑 3cm，求圓周」，學生快速拍下正確公式卡。可用來檢核圓周公式與面積公式的辨別能力。</p>
+            <h3>遊戲 2：周界巡邏員</h3>
+            <p>投影半圓、扇形或跑道圖形，學生以彩筆沿完整外圍描邊，再寫出每段邊界對應的運算式。</p>
+            ${promptBox("prompt-circle", `請為香港小學六年級數學課題「圓周與圓面積」設計 5 題互動選擇題：
+1. 2 題辨別圓周公式與圓面積公式
+2. 2 題半圓周界陷阱題，必須檢查是否加上直徑
+3. 1 題已知圓周逆求半徑及面積
+每題提供 A、B、C、D 四個選項，標示答案及一句易錯提示。`)}
+          </section>`,
         mod4: `
-### 四、 分層學習工作紙
-
-**【A 初階基本題】**
-1. 基礎概念題：請簡述「${topic}」的核心定義與主要計算步驟。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【參考解答】</strong> 請依課本標準定義寫出關鍵公式或性質。
-</div>
-<div class="student-space"></div>
-
-2. 基本運算題：針對標準數值，計算出「${topic}」之結果。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【參考解答】</strong> 列出完整橫式並依照運算法則計算。
-</div>
-<div class="student-space"></div>
-
-**【B 中階進階題】**
-3. 生活情境題：小明在日常生活中遇到與「${topic}」相關的問題，請列式求出答案。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【參考解答】</strong> 辨別題目已知條件，列出兩步計算題並驗算。
-</div>
-<div class="student-space"></div>
-
-4. 逆向推論題：已知結果數值，反求「${topic}」的原始條件。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【參考解答】</strong> 透過逆向思維或簡易方程求解。
-</div>
-<div class="student-space"></div>
-
-5. 診斷改錯題：指出常見學生解題錯誤，並說明正確做法。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【參考解答】</strong> 圈出漏加步驟或符號錯誤，重算正解。
-</div>
-<div class="student-space"></div>
-
-**【C 高階思考題】**
-6. 複合探究題：結合多重條件的「${topic}」深度應用題，要求使用不同方法解答。
-<div class="solution-box bg-slate-50 p-2.5 rounded border border-slate-200 mt-1 text-xs text-slate-600">
-<strong>【參考解答】</strong> 運用割補法、轉化法或方程法進行解題。
-</div>
-<div class="student-space"></div>
-`,
+          <section>
+            <h2>四、分層學習工作紙（π 取 3.14 或 22/7）</h2>
+            <h3>A 初階基本題</h3>
+            ${question("1. 一個圓形花壇的半徑是 5m。求圓周及面積。", "圓周 = 2 × 3.14 × 5 = 31.4m；面積 = 3.14 × 5 × 5 = 78.5m²。")}
+            ${question("2. 一個圓形杯墊的直徑是 14cm。求圓周及面積。（π 取 22/7）", "半徑 = 14 ÷ 2 = 7cm；圓周 = 44cm；面積 = 154cm²。")}
+            <h3>B 中階進階題</h3>
+            ${question("3. 一個半徑為 7cm 的半圓形紙片，求它的周界。（π 取 22/7）", "直徑 = 14cm；半圓弧長 = 22cm；周界 = 22 + 14 = 36cm。")}
+            ${question("4. 一條長 88cm 的鐵絲剛好圍成一個圓形。求圓面積。（π 取 22/7）", "直徑 = 88 ÷ (22/7) = 28cm；半徑 = 14cm；面積 = 616cm²。")}
+            ${question("5. 小聰以 3.14 × (10 ÷ 2) × (10 ÷ 2) 計算直徑 10cm 的半圓面積。找出錯誤。", "該算式計算的是整圓面積 78.5cm²，半圓面積應為 78.5 ÷ 2 = 39.25cm²。")}
+            <h3>C 高階思考題</h3>
+            ${question("6. 邊長 20cm 的正方形內有一個最大內切圓。求四角陰影面積。", "正方形面積 = 400cm²；圓面積 = 3.14 × 10 × 10 = 314cm²；陰影面積 = 86cm²。")}
+          </section>`,
         mod5: `
-### 五、 課後鞏固反思筆記卡
+          <section>
+            <h2>五、課後鞏固反思筆記卡</h2>
+            <div class="reflection-card">【六年級數學反思筆記：圓周與圓面積】
 
-\`\`\`text
-┌─────────────────────────────────────────────────────────────┐
-│                 【${grade} 數學反思筆記：${topic}】                          │
-├─────────────────────────────────────────────────────────────┤
-│ 1. 今日核心口訣：__________________________________________ │
-│ 2. 我的易錯警示燈：________________________________________ │
-│ 3. 我出的挑戰題：__________________________________________ │
-└─────────────────────────────────────────────────────────────┘
-\`\`\`
-`
+1. 核心公式
+・圓周：C = πd 或 C = 2πr
+・面積：A = πr²
+
+2. 易錯檢查
+[　] 半圓周界有加上直徑嗎？
+[　] 題目給的是直徑還是半徑？
+[　] 已知圓周時，有先求半徑嗎？
+
+3. 我今天最需要記住的策略：
+________________________________________________</div>
+          </section>`
       };
     }
 
-    // 渲染特定標籤或全覽
+    function lessonTable(rows) {
+      return `<div class="table-scroll"><table><thead><tr><th>節奏與時間</th><th>教學環節</th><th>教師引導</th><th>學生學習活動</th></tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    }
+
+    function diagnosticTable(rows) {
+      return `<div class="table-scroll"><table><thead><tr><th>難點維度</th><th>常見迷思概念／操作障礙</th><th>成因剖析與對策</th></tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    }
+
+    function question(questionText, answerText) {
+      return `<div class="mb-4"><p><strong>${questionText}</strong></p><div class="solution-box"><strong>【解答步驟】</strong><br>${answerText}</div><div class="student-space" aria-label="學生作答空間"></div></div>`;
+    }
+
+    function promptBox(id, text) {
+      return `<div class="prompt-box"><button type="button" class="prompt-copy control-button rounded bg-blue-600 px-2 py-1 text-[11px] font-semibold text-white hover:bg-blue-500" data-copy-target="${id}">複製指令</button><div id="${id}">${formatText(text)}</div></div>`;
+    }
+
+    function buildUniversalPackage(grade, topic, duration) {
+      const durationLabel = duration === 30 ? "緊湊單堂課" : "深入連堂課";
+      const topicSafe = escapeHtml(topic);
+
+      const paceRows = duration === 30
+        ? [
+            ["00–03 分鐘", "生活問題引入", `日常生活中，甚麼時候會遇到「${topicSafe}」？`, "連結生活經驗，聚焦課題。"],
+            ["03–12 分鐘", "概念探究", "第一步應先確定甚麼條件？", "觀察圖解並記錄規則。"],
+            ["12–20 分鐘", "錯例診斷", "這個步驟哪裡出錯？", "小組找出陷阱並修正。"],
+            ["20–26 分鐘", "隨堂快練", "如何驗算答案是否合理？", "完成基礎及進階題。"],
+            ["26–30 分鐘", "總結評估", "今天最重要的一句話是甚麼？", "口答及標記易錯點。"]
+          ]
+        : [
+            ["00–08 分鐘", "情境與舊知回顧", `「${topicSafe}」與之前學過的概念有何關係？`, "提取先備知識。"],
+            ["08–22 分鐘", "動手操作與推導", "改變數值後，規則仍成立嗎？", "分組操作、歸納法則。"],
+            ["22–34 分鐘", "錯例辨析", "哪種方法較簡潔？", "診斷錯因並比較解法。"],
+            ["34–44 分鐘", "遊戲鞏固", "注意題目的限制條件與單位。", "參與互動搶答。"],
+            ["44–54 分鐘", "分層工作紙", "遇到難題時可先畫甚麼？", "獨立練習及接受回饋。"],
+            ["54–60 分鐘", "反思整理", "今天克服了哪個盲點？", "完成反思筆記。"]
+          ];
+
+      return {
+        mod1: `
+          <section>
+            <h2>一、課題難點診斷與認知障礙分析</h2>
+            ${diagnosticTable([
+              ["核心概念模糊", `對「${topicSafe}」的特徵或運算法則理解不透，容易死套公式。`, "以教具、圖像及具體例子建立心智模型。"],
+              ["步驟與符號轉換", "運算步驟較多時容易跳步、漏寫單位或忘記化簡。", "提供口訣及結構化解題框架。"],
+              ["情境建模與逆向推論", "文字題中未能分辨已知與未知條件。", "強化畫圖、列關係式及驗算策略。"]
+            ])}
+          </section>`,
+        mod2: `
+          <section>
+            <h2>二、詳細教學計劃（${duration} 分鐘 ${durationLabel}）</h2>
+            <h3>教學目標</h3>
+            <ol>
+              <li>理解「${topicSafe}」的核心概念與運算邏輯。</li>
+              <li>掌握標準解題步驟，能準確處理基礎情境題。</li>
+              <li>建立自查與驗算習慣，減少常見錯誤。</li>
+            </ol>
+            ${lessonTable(paceRows)}
+            <h3>板書設計</h3>
+            <div class="reflection-card">課題：${topicSafe}
+1. 核心概念／公式
+2. 解題三部曲：
+   ① 審題抓條件
+   ② 列式重算理
+   ③ 驗算防陷阱
+
+★ 易錯提示：留意單位、步驟及逆向推算。</div>
+          </section>`,
+        mod3: `
+          <section>
+            <h2>三、鞏固遊戲設計與生成指令</h2>
+            <h3>基礎遊戲：概念配對卡</h3>
+            <p>學生配對「條件卡、圖像卡、公式卡與答案卡」，辨別「${topicSafe}」所需的關鍵資訊。</p>
+            <h3>進階遊戲：除錯小法官</h3>
+            <p>教師展示一個包含錯誤步驟的解法，小組找出錯誤位置、說明原因，並提出修正方法。</p>
+            ${promptBox("prompt-universal", `請為「${grade} 數學科－${topic}」設計 5 道 Wordwall 互動選擇題：
+1. 概念題 2 題
+2. 計算應用題 2 題
+3. 改錯陷阱題 1 題
+請使用香港小學常用繁體中文數學術語，提供四個選項、正確答案及簡短解析。`)}
+          </section>`,
+        mod4: `
+          <section>
+            <h2>四、分層學習工作紙</h2>
+            <h3>A 初階基本題</h3>
+            ${question(`1. 請簡述「${topicSafe}」的核心定義與主要計算步驟。`, "依課本標準定義，寫出關鍵公式、性質或操作流程。")}
+            ${question(`2. 選擇一組標準數值，計算「${topicSafe}」的結果。`, "列出完整橫式，並按步驟計算及標示單位。")}
+            <h3>B 中階進階題</h3>
+            ${question(`3. 設計一道與「${topicSafe}」有關的生活情境題，並列式求解。`, "先列出已知及未知條件，再完成計算與驗算。")}
+            ${question(`4. 已知結果，反求「${topicSafe}」的原始條件。`, "運用逆向思維、關係式或簡易方程求解。")}
+            ${question("5. 指出一個常見解題錯誤，並說明正確做法。", "圈出錯誤步驟，補回遺漏條件或重新列式。")}
+            <h3>C 高階思考題</h3>
+            ${question(`6. 設計一題結合多個條件的「${topicSafe}」應用題，並嘗試使用兩種方法解答。`, "可使用圖解、轉化法、割補法或方程法，比較不同策略。")}
+          </section>`,
+        mod5: `
+          <section>
+            <h2>五、課後鞏固反思筆記卡</h2>
+            <div class="reflection-card">【${grade} 數學反思筆記：${topicSafe}】
+
+1. 今日核心口訣：
+________________________________________________
+
+2. 我的易錯警示燈：
+________________________________________________
+
+3. 我已掌握的解題步驟：
+________________________________________________
+
+4. 我想挑戰的延伸題：
+________________________________________________</div>
+          </section>`
+      };
+    }
+
+    function getGeneratedPackage() {
+      if (state.topic === "圓周與圓面積") {
+        return getCircleModules(state.duration);
+      }
+      return buildUniversalPackage(state.grade, state.topic, state.duration);
+    }
+
     function renderActiveView() {
-      if (!generatedData) return;
-      const display = document.getElementById("contentDisplay");
-      let mdText = "";
+      if (!state.generated) return;
 
-      if (activeTab === "all") {
-        mdText = `${generatedData.mod1}\n\n---\n\n${generatedData.mod2}\n\n---\n\n${generatedData.mod3}\n\n---\n\n${generatedData.mod4}\n\n---\n\n${generatedData.mod5}`;
-      } else {
-        mdText = generatedData[activeTab] || "";
-      }
+      const moduleKeys = state.activeTab === "all"
+        ? ["mod1", "mod2", "mod3", "mod4", "mod5"]
+        : [state.activeTab];
 
-      display.innerHTML = marked.parse(mdText);
+      els.contentDisplay.innerHTML = moduleKeys
+        .map((key) => state.generated[key] || "")
+        .join('<div class="border-t border-slate-200"></div>');
 
-      // 觸發 MathJax 排版數學符號
-      if (window.MathJax && window.MathJax.typesetPromise) {
-        window.MathJax.typesetPromise([display]).catch(err => console.log(err));
-      }
+      els.contentDisplay.classList.toggle("hide-answers", !state.showAnswers);
+      updateSelectedButtons();
     }
 
-    // 切換分頁標籤
-    function filterTab(tabKey) {
-      activeTab = tabKey;
-      document.querySelectorAll(".tab-btn").forEach(btn => {
-        if (btn.dataset.tab === tabKey) {
-          btn.className = "tab-btn px-2.5 py-1 text-xs rounded font-semibold bg-white shadow-sm border border-slate-200 text-blue-600";
+    function setLoading(isLoading) {
+      els.loadingIndicator.classList.toggle("hidden", !isLoading);
+      els.contentDisplay.classList.toggle("hidden", isLoading);
+      els.generateButton.disabled = isLoading;
+      els.generateButton.classList.toggle("opacity-70", isLoading);
+      els.generateButton.classList.toggle("cursor-wait", isLoading);
+    }
+
+    function generateResources({ showNotice = true } = {}) {
+      const enteredTopic = els.customTopicInput.value.trim();
+      state.topic = enteredTopic || els.topicDropdown.value || "數學綜合題";
+      els.customTopicInput.value = state.topic;
+      updateMeta();
+      setLoading(true);
+
+      window.setTimeout(() => {
+        state.generated = getGeneratedPackage();
+        setLoading(false);
+        renderActiveView();
+        if (showNotice) showToast(`已更新為 ${state.duration} 分鐘教學資源。`);
+      }, 180);
+    }
+
+    function showToast(message) {
+      els.toastMsg.textContent = message;
+      els.toast.classList.add("toast-show");
+      window.clearTimeout(state.toastTimer);
+      state.toastTimer = window.setTimeout(() => {
+        els.toast.classList.remove("toast-show");
+      }, 2600);
+    }
+
+    async function copyText(text, successMessage) {
+      if (!text.trim()) {
+        showToast("目前沒有可複製的內容。");
+        return;
+      }
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
         } else {
-          btn.className = "tab-btn px-2.5 py-1 text-xs rounded font-medium text-slate-600 hover:bg-slate-200/50";
+          const textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.setAttribute("readonly", "");
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+          const copied = document.execCommand("copy");
+          textarea.remove();
+          if (!copied) throw new Error("Copy failed");
         }
+        showToast(successMessage);
+      } catch {
+        showToast("複製失敗，請手動選取內容。");
+      }
+    }
+
+    document.querySelectorAll(".grade-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.grade = button.dataset.grade;
+        populateTopics(state.grade);
+        updateSelectedButtons();
+        generateResources();
       });
-      renderActiveView();
-    }
+    });
 
-    // 切換解答顯示/隱藏
-    function toggleAnswers(show) {
-      const container = document.getElementById("contentDisplay");
-      if (show) {
-        container.classList.remove("hide-answers");
-      } else {
-        container.classList.add("hide-answers");
+    document.querySelectorAll(".dur-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.duration = Number(button.dataset.duration);
+        updateSelectedButtons();
+        generateResources();
+      });
+    });
+
+    document.querySelectorAll(".tab-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.activeTab = button.dataset.tab;
+        renderActiveView();
+      });
+    });
+
+    els.topicDropdown.addEventListener("change", () => {
+      els.customTopicInput.value = els.topicDropdown.value;
+    });
+
+    els.customTopicInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        generateResources();
       }
-    }
+    });
 
-    // 複製指定區塊指令
-    function copySnippet(elementId) {
-      const el = document.getElementById(elementId);
-      if (!el) return;
-      const text = el.innerText;
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        showToast("已成功複製遊戲生成指令！");
-      } catch (err) {
-        showToast("複製失敗，請手動反白複製");
-      }
-      document.body.removeChild(textarea);
-    }
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      generateResources();
+    });
 
-    // 複製文字至剪貼簿（符合安全規範，不使用 alert）
-    function copyToClipboard() {
-      const text = document.getElementById("contentDisplay").innerText;
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        showToast("已成功將全文複製至剪貼簿！");
-      } catch (err) {
-        showToast("複製失敗，請手動選取");
-      }
-      document.body.removeChild(textarea);
-    }
+    document.getElementById("toggleAnswerSwitch").addEventListener("change", (event) => {
+      state.showAnswers = event.target.checked;
+      els.contentDisplay.classList.toggle("hide-answers", !state.showAnswers);
+      showToast(state.showAnswers ? "已顯示解答與步驟。" : "已切換為學生空白工作紙。");
+    });
 
-    // 漂浮提示條
-    function showToast(msg) {
-      const toast = document.getElementById("toast");
-      document.getElementById("toastMsg").textContent = msg;
-      toast.classList.remove("opacity-0", "pointer-events-none");
-      setTimeout(() => {
-        toast.classList.add("opacity-0", "pointer-events-none");
-      }, 2500);
-    }
+    document.getElementById("printButton").addEventListener("click", () => {
+      window.print();
+    });
+
+    document.getElementById("copyAllButton").addEventListener("click", () => {
+      copyText(els.contentDisplay.innerText, "已複製目前顯示的教學資源。");
+    });
+
+    els.contentDisplay.addEventListener("click", (event) => {
+      const copyButton = event.target.closest("[data-copy-target]");
+      if (!copyButton) return;
+      const target = document.getElementById(copyButton.dataset.copyTarget);
+      if (target) copyText(target.innerText, "已複製遊戲生成指令。");
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      populateTopics(state.grade);
+      updateSelectedButtons();
+      updateMeta();
+      generateResources({ showNotice: false });
+      lucide.createIcons();
+    });
   </script>
-</body>
+ </body>
 </html>
