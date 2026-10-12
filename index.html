@@ -3,27 +3,31 @@
  <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260908-05-b9d8a99","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/9e99ecf74af2a081.telemetry_sdk.js" integrity="sha512-tZ7fmfTx2KpCLjXQnEuL9azQ4A5+7+xumsx6r/WYVD0zCP/8LP8hDeCypMQesmP+WyAew4g7l5Ah23Bjd6yoVg=="></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="香港小學數學科教學資源庫：依年級、課時與課題，即時產生難點診斷、教案、遊戲與分層工作紙。">
   <title>小學數學教學資源庫</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
   <script src="/_sdk/20ec72cea0cb85e1.editing_sdk.js" integrity="sha512-y1Lf0yXrnk1vqzLs9a/3x3pp+jSvei2Pbl+x/omYgN5b7HqLzMgs5Vx9HdgcQfw7jcDinPHCzHGQ6BsPf/68zQ=="></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;family=Noto+Serif+TC:wght@600;700&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #172033;
-      --muted: #64748b;
-      --line: #dbe4ee;
-      --blue: #2563eb;
-      --blue-soft: #eff6ff;
-      --paper: #ffffff;
-      --canvas: #f1f5f9;
+      --ink: #13263a;
+      --muted: #5b6b7c;
+      --line: #d5e0ea;
+      --teal: #0f766e;
+      --teal-deep: #0b5f59;
+      --teal-soft: #e6f4f2;
+      --amber: #c2410c;
+      --paper: #fffdf9;
+      --canvas: #e8eef4;
+      --shadow: 0 10px 28px rgba(19, 38, 58, .08);
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Noto Sans TC", "DM Sans", sans-serif;
+      font-family: "Noto Sans TC", "Bricolage Grotesque", sans-serif;
       color: var(--ink);
       background: var(--canvas);
     }
@@ -35,7 +39,7 @@
     button:focus-visible,
     input:focus-visible,
     select:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, .28);
+      outline: 3px solid rgba(15, 118, 110, .28);
       outline-offset: 2px;
     }
 
@@ -43,12 +47,30 @@
       width: 100%;
       min-height: calc(100 * min(var(--vh, 1vh), 1vh));
       background:
-        radial-gradient(circle at 85% 0%, rgba(191, 219, 254, .6), transparent 28rem),
-        #f1f5f9;
+        radial-gradient(ellipse 70% 45% at 100% -10%, rgba(15, 118, 110, .16), transparent 55%),
+        radial-gradient(ellipse 50% 35% at 0% 100%, rgba(194, 65, 12, .08), transparent 50%),
+        linear-gradient(180deg, #edf3f7 0%, #e4ebf2 100%);
+    }
+
+    .brand-mark {
+      background: linear-gradient(145deg, #0f766e, #134e4a);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 6px 14px rgba(15, 118, 110, .28);
+    }
+
+    .brand-title {
+      font-family: "Noto Serif TC", "Bricolage Grotesque", serif;
+      font-size: 1.05rem;
+      letter-spacing: .01em;
+    }
+
+    .panel-surface {
+      background:
+        linear-gradient(180deg, rgba(255,253,249,.98), rgba(255,255,255,.96));
+      box-shadow: var(--shadow);
     }
 
     .control-button {
-      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease, box-shadow .18s ease;
     }
 
     .control-button:hover { transform: translateY(-1px); }
@@ -56,19 +78,44 @@
 
     .selection-button.is-active,
     .tab-button.is-active {
-      color: #1d4ed8;
-      background: #eff6ff;
-      border-color: #2563eb;
+      color: var(--teal-deep);
+      background: var(--teal-soft);
+      border-color: var(--teal);
       font-weight: 700;
-      box-shadow: 0 1px 2px rgba(37, 99, 235, .1);
+      box-shadow: 0 1px 2px rgba(15, 118, 110, .12);
     }
 
     .tab-button.is-active {
       background: #ffffff;
     }
 
+    .generate-btn {
+      color: #fff;
+      background: linear-gradient(135deg, #0f766e, #0b5f59);
+      border: 1px solid #0b5f59;
+    }
+
+    .generate-btn:hover {
+      background: linear-gradient(135deg, #0e6b64, #094e49);
+    }
+
+    .generate-btn:disabled {
+      opacity: .7;
+      cursor: wait;
+      transform: none;
+    }
+
+    .ready-chip {
+      color: var(--teal-deep);
+      background: var(--teal-soft);
+      border: 1px solid rgba(15, 118, 110, .22);
+    }
+
     .sheet-box {
       min-height: 650px;
+      background:
+        linear-gradient(180deg, #fffefb 0%, #ffffff 40%),
+        #ffffff;
     }
 
     .md-zone {
@@ -77,25 +124,34 @@
       line-height: 1.72;
     }
 
+    .md-zone section {
+      animation: riseIn .35s ease both;
+    }
+
+    .md-zone section + section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #d5e0ea;
+    }
+
     .md-zone h2 {
-      font-size: 1.2rem;
+      font-family: "Noto Serif TC", "Noto Sans TC", serif;
+      font-size: 1.22rem;
       font-weight: 700;
-      color: #1e3a8a;
-      border-left: 4px solid #2563eb;
-      padding-left: .7rem;
+      color: #134e4a;
+      border-left: 4px solid var(--teal);
+      padding-left: .75rem;
       margin: 0 0 1rem;
     }
 
     .md-zone h3 {
       font-size: 1rem;
       font-weight: 700;
-      color: #1e40af;
+      color: #0f766e;
       margin: 1.35rem 0 .5rem;
     }
 
-    .md-zone p {
-      margin: .5rem 0;
-    }
+    .md-zone p { margin: .5rem 0; }
 
     .md-zone ul,
     .md-zone ol {
@@ -103,9 +159,7 @@
       margin: .5rem 0;
     }
 
-    .md-zone li {
-      margin: .28rem 0;
-    }
+    .md-zone li { margin: .28rem 0; }
 
     .md-zone table {
       width: 100%;
@@ -117,34 +171,47 @@
 
     .table-scroll {
       overflow-x: auto;
-      border: 1px solid #dbe4ee;
-      border-radius: .75rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #fff;
     }
 
     .md-zone th,
     .md-zone td {
-      border-bottom: 1px solid #dbe4ee;
-      padding: .7rem .8rem;
+      border-bottom: 1px solid var(--line);
+      padding: .75rem .85rem;
       vertical-align: top;
       text-align: left;
     }
 
     .md-zone th {
-      color: #1e293b;
-      background: #f8fafc;
+      color: #134e4a;
+      background: linear-gradient(180deg, #f3faf9, #eef7f5);
       font-weight: 700;
     }
 
-    .md-zone tr:last-child td {
-      border-bottom: 0;
+    .md-zone tr:last-child td { border-bottom: 0; }
+
+    .module-divider {
+      height: 1px;
+      margin: 1.5rem 0;
+      background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+    }
+
+    .question-block {
+      margin-bottom: 1rem;
+      padding: .9rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: .85rem;
+      background: #fcfdff;
     }
 
     .solution-box {
       margin-top: .55rem;
       padding: .75rem .85rem;
       color: #475569;
-      background: #f8fafc;
-      border: 1px solid #dbe4ee;
+      background: #f4faf9;
+      border: 1px solid #cfe7e3;
       border-radius: .6rem;
       font-size: .82rem;
     }
@@ -163,13 +230,8 @@
       );
     }
 
-    .hide-answers .solution-box {
-      display: none !important;
-    }
-
-    .hide-answers .student-space {
-      display: block;
-    }
+    .hide-answers .solution-box { display: none !important; }
+    .hide-answers .student-space { display: block; }
 
     .prompt-box {
       position: relative;
@@ -178,9 +240,11 @@
       padding-right: 7rem;
       overflow: auto;
       color: #e2e8f0;
-      background: #172033;
-      border-radius: .75rem;
-      font-family: "DM Sans", "Noto Sans TC", sans-serif;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(15, 118, 110, .35), transparent 40%),
+        #13263a;
+      border-radius: .85rem;
+      font-family: "Noto Sans TC", "Bricolage Grotesque", sans-serif;
       font-size: .78rem;
       line-height: 1.65;
     }
@@ -192,22 +256,59 @@
     }
 
     .reflection-card {
-      padding: 1rem;
+      padding: 1rem 1.1rem;
       overflow: auto;
       color: #334155;
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
+      background:
+        linear-gradient(180deg, #fffef8, #f8fafc);
+      border: 1px solid #d6dee8;
+      border-left: 4px solid #c2410c;
       border-radius: .75rem;
       white-space: pre-wrap;
-      font-family: "DM Sans", "Noto Sans TC", sans-serif;
       font-size: .86rem;
       line-height: 1.75;
     }
 
+    .tip-banner {
+      font-size: .72rem;
+      line-height: 1.5;
+      color: var(--muted);
+      background: #f3f8f7;
+      border: 1px dashed #b7d4cf;
+      border-radius: .7rem;
+      padding: .65rem .75rem;
+    }
+
     .toast-show {
       opacity: 1 !important;
-      transform: translateY(0) !important;
+      transform: translate(-50%, 0) !important;
       pointer-events: auto !important;
+    }
+
+    @media (min-width: 640px) {
+      .toast-show {
+        transform: translateY(0) !important;
+      }
+    }
+
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes softPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(15, 118, 110, .25); }
+      50% { box-shadow: 0 0 0 8px rgba(15, 118, 110, 0); }
+    }
+
+    .loading-ring {
+      animation: softPulse 1.4s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .md-zone section,
+      .control-button,
+      .loading-ring { animation: none !important; transition: none !important; }
     }
 
     @media print {
@@ -224,9 +325,13 @@
         overflow: visible !important;
         padding: 1.25rem !important;
       }
-      .solution-box { break-inside: avoid; }
+      .solution-box,
+      .question-block { break-inside: avoid; }
       .table-scroll { overflow: visible !important; }
       .md-zone table { min-width: 0 !important; }
+      .md-zone section + section {
+        border-top: 1px solid #cbd5e1;
+      }
     }
   </style>
   <script src="/_sdk/fbe2ebfd64647c54.data_sdk.js" type="text/javascript" integrity="sha512-vkTX6CfvpHc3WbjK+tFJCaDuw4ERA4aEV/e5/7+MMJPMTF4RJYCI6CAwJBT/gtDW+dba4uLSsPUgDjVDHWtgUQ=="></script>
@@ -234,78 +339,144 @@
  </head>
  <body data-template-id="__page-root">
   <div class="resource-shell">
-   <header data-template-id="top-header" class="canva-header sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur no-print">
+   <header data-template-id="top-header" class="canva-header sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-md no-print">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
      <div class="flex items-center gap-3 min-w-0">
-      <div class="w-9 h-9 shrink-0 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-sm" aria-hidden="true"><i data-lucide="calculator" class="w-5 h-5"></i>
+      <div class="brand-mark w-10 h-10 shrink-0 rounded-xl text-white flex items-center justify-center" aria-hidden="true">
+       <i data-lucide="calculator" class="w-5 h-5"></i>
       </div>
       <div class="min-w-0">
-       <h1 data-template-id="app-title" class="canva-text font-bold leading-tight"></h1>
-       <p data-template-id="app-subtitle" class="canva-text text-xs text-slate-500 mt-0.5"></p>
+       <h1 data-template-id="app-title" class="canva-text brand-title font-bold leading-tight text-[var(--ink)]">小學數學教學資源庫</h1>
+       <p data-template-id="app-subtitle" class="canva-text text-xs text-slate-500 mt-0.5">香港課程 P1–P6・一分鐘備課助手</p>
       </div>
      </div>
-     <nav aria-label="工具列" class="flex items-center gap-2 shrink-0"><button id="printButton" type="button" data-template-id="print-button" class="canva-button control-button hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-100 text-slate-700 hover:bg-slate-200"> <i data-lucide="printer" class="w-3.5 h-3.5"></i> <span></span> </button> <button id="copyAllButton" type="button" data-template-id="copy-button" class="canva-button control-button inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border border-blue-100 bg-blue-50 text-blue-700 hover:bg-blue-100"> <i data-lucide="copy" class="w-3.5 h-3.5"></i> <span></span> </button>
+     <nav aria-label="工具列" class="flex items-center gap-2 shrink-0">
+      <button id="printButton" type="button" data-template-id="print-button" class="canva-button control-button hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100">
+       <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+       <span>列印</span>
+      </button>
+      <button id="copyAllButton" type="button" data-template-id="copy-button" class="canva-button control-button inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border border-teal-200 bg-teal-50 text-teal-800 hover:bg-teal-100">
+       <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+       <span>複製內容</span>
+      </button>
      </nav>
     </div>
    </header>
+
    <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-5">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
      <aside class="lg:col-span-4 space-y-4 no-print" aria-label="課題設定">
-      <section data-template-id="settings-panel" class="canva-panel bg-white rounded-xl p-5 border border-slate-200 shadow-sm">
+      <section data-template-id="settings-panel" class="canva-panel panel-surface rounded-2xl p-5 border border-slate-200/90">
        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-        <h2 data-template-id="settings-title" class="canva-text text-sm font-bold flex items-center gap-2"><i data-lucide="sliders-horizontal" class="w-4 h-4 text-blue-600"></i> <span></span></h2><span data-template-id="ready-tag" class="canva-tag text-xs px-2 py-0.5 rounded font-semibold"></span>
+        <h2 data-template-id="settings-title" class="canva-text text-sm font-bold flex items-center gap-2">
+         <i data-lucide="sliders-horizontal" class="w-4 h-4 text-teal-700"></i>
+         <span>課題設定</span>
+        </h2>
+        <span data-template-id="ready-tag" class="canva-tag ready-chip text-xs px-2 py-0.5 rounded-md font-semibold">即時可用</span>
        </div>
+
        <div class="space-y-4">
-        <fieldset><legend data-template-id="grade-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5"></legend>
-         <div class="grid grid-cols-3 gap-1.5" id="gradePills"><button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P1">一年級 P1</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P2">二年級 P2</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P3">三年級 P3</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P4">四年級 P4</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P5">五年級 P5</button> <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-grade="P6">六年級 P6</button>
+        <p class="tip-banner">先選年級與課時，再揀課題；亦可自訂課題名稱後按「產生資源」。</p>
+
+        <fieldset>
+         <legend data-template-id="grade-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5">選擇年級</legend>
+         <div class="grid grid-cols-3 gap-1.5" id="gradePills">
+          <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-grade="P1">一年級</button>
+          <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-grade="P2">二年級</button>
+          <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-grade="P3">三年級</button>
+          <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-grade="P4">四年級</button>
+          <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-grade="P5">五年級</button>
+          <button type="button" class="grade-btn selection-button control-button py-1.5 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-grade="P6">六年級</button>
          </div>
         </fieldset>
-        <fieldset><legend data-template-id="duration-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5"></legend>
-         <div class="grid grid-cols-2 gap-2"><button type="button" id="btnDur30" class="dur-btn selection-button control-button py-2 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-duration="30"> <i data-lucide="clock-3" class="w-3.5 h-3.5 inline-block mr-1"></i>30 分鐘 </button> <button type="button" id="btnDur60" class="dur-btn selection-button control-button py-2 text-xs rounded border border-slate-200 font-medium hover:bg-slate-50" data-duration="60"> <i data-lucide="timer" class="w-3.5 h-3.5 inline-block mr-1"></i>60 分鐘 </button>
+
+        <fieldset>
+         <legend data-template-id="duration-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5">課時長度</legend>
+         <div class="grid grid-cols-2 gap-2">
+          <button type="button" id="btnDur30" class="dur-btn selection-button control-button py-2 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-duration="30">
+           <i data-lucide="clock-3" class="w-3.5 h-3.5 inline-block mr-1"></i>30 分鐘
+          </button>
+          <button type="button" id="btnDur60" class="dur-btn selection-button control-button py-2 text-xs rounded-lg border border-slate-200 font-medium hover:bg-slate-50" data-duration="60">
+           <i data-lucide="timer" class="w-3.5 h-3.5 inline-block mr-1"></i>60 分鐘
+          </button>
          </div>
         </fieldset>
-        <div><label data-template-id="topic-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5" for="topicDropdown"></label> <select id="topicDropdown" class="w-full rounded-lg border border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-700 transition focus:bg-white focus:border-blue-500"></select>
+
+        <div>
+         <label data-template-id="topic-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5" for="topicDropdown">課程課題</label>
+         <select id="topicDropdown" class="w-full rounded-lg border border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-700 transition focus:bg-white focus:border-teal-600"></select>
         </div>
-        <div><label data-template-id="custom-topic-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5" for="customTopicInput"></label> <input id="customTopicInput" data-template-id="custom-topic-input" class="canva-input w-full rounded-lg border border-slate-200 p-2.5 text-sm text-slate-700 transition focus:border-blue-500" type="text">
-        </div><button id="generateBtn" data-template-id="generate-button" type="button" class="canva-button control-button w-full py-2.5 px-4 rounded-lg font-semibold text-sm shadow-sm flex items-center justify-center gap-2"> <i data-lucide="sparkles" class="w-4 h-4"></i> <span></span> </button>
+
+        <div>
+         <label data-template-id="custom-topic-label" class="canva-text block text-xs font-semibold text-slate-600 mb-1.5" for="customTopicInput">自訂課題（可選）</label>
+         <input id="customTopicInput" data-template-id="custom-topic-input" class="canva-input w-full rounded-lg border border-slate-200 p-2.5 text-sm text-slate-700 transition focus:border-teal-600" type="text" placeholder="例如：半圓周界、異分母分數加法">
+        </div>
+
+        <button id="generateBtn" data-template-id="generate-button" type="button" class="canva-button generate-btn control-button w-full py-3 px-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2">
+         <i data-lucide="sparkles" class="w-4 h-4"></i>
+         <span>產生教學資源</span>
+        </button>
        </div>
       </section>
-      <section data-template-id="answer-panel" class="canva-panel bg-white rounded-xl p-4 border border-slate-200 shadow-sm flex items-center justify-between gap-3">
+
+      <section data-template-id="answer-panel" class="canva-panel panel-surface rounded-2xl p-4 border border-slate-200/90 flex items-center justify-between gap-3">
        <div>
-        <h2 data-template-id="answer-title" class="canva-text text-xs font-bold text-slate-700"></h2>
-        <p data-template-id="answer-description" class="canva-text text-[11px] text-slate-400 mt-0.5"></p>
-       </div><label class="relative inline-flex items-center cursor-pointer shrink-0" for="toggleAnswerSwitch"> <input id="toggleAnswerSwitch" type="checkbox" class="sr-only peer" checked> <span class="w-10 h-5 rounded-full bg-slate-200 peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-slate-300 after:bg-white after:transition-all peer-checked:after:translate-x-5"></span> <span class="sr-only">切換解答顯示</span> </label>
+        <h2 data-template-id="answer-title" class="canva-text text-xs font-bold text-slate-700">顯示解答步驟</h2>
+        <p data-template-id="answer-description" class="canva-text text-[11px] text-slate-500 mt-0.5">關閉後變為學生空白工作紙</p>
+       </div>
+       <label class="relative inline-flex items-center cursor-pointer shrink-0" for="toggleAnswerSwitch">
+        <input id="toggleAnswerSwitch" type="checkbox" class="sr-only peer" checked>
+        <span class="w-10 h-5 rounded-full bg-slate-200 peer-checked:bg-teal-700 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-slate-300 after:bg-white after:transition-all peer-checked:after:translate-x-5"></span>
+        <span class="sr-only">切換解答顯示</span>
+       </label>
       </section>
      </aside>
+
      <section class="lg:col-span-8" aria-label="教學資源內容">
-      <article class="sheet-box bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
-       <div class="no-print px-4 sm:px-5 py-3 border-b border-slate-200 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <div class="flex gap-1.5 overflow-x-auto pb-1 sm:pb-0" role="tablist" aria-label="資源模組"><button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-slate-200 text-slate-600 hover:bg-white" data-tab="all">全覽</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod1">1. 難點診斷</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod2">2. 詳細教案</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod3">3. 遊戲與指令</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod4">4. 分層工作紙</button> <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded border border-transparent text-slate-600 hover:bg-white" data-tab="mod5">5. 反思筆記</button>
+      <article class="sheet-box rounded-2xl border border-slate-200/90 shadow-sm flex flex-col overflow-hidden">
+       <div class="no-print px-4 sm:px-5 py-3 border-b border-slate-200 bg-gradient-to-r from-slate-50 to-teal-50/40 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div class="flex gap-1.5 overflow-x-auto pb-1 sm:pb-0" role="tablist" aria-label="資源模組">
+         <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 text-slate-600 hover:bg-white" data-tab="all">全覽</button>
+         <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:bg-white" data-tab="mod1">1. 難點診斷</button>
+         <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:bg-white" data-tab="mod2">2. 詳細教案</button>
+         <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:bg-white" data-tab="mod3">3. 遊戲與指令</button>
+         <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:bg-white" data-tab="mod4">4. 分層工作紙</button>
+         <button type="button" class="tab-btn tab-button control-button whitespace-nowrap px-2.5 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:bg-white" data-tab="mod5">5. 反思筆記</button>
         </div>
-        <p id="currentTopicLabel" class="text-xs text-slate-500 font-medium whitespace-nowrap"></p>
+        <p id="currentTopicLabel" class="text-xs text-teal-900/70 font-medium whitespace-nowrap"></p>
        </div>
+
        <div class="hidden print-only p-6 border-b border-slate-400">
         <div class="text-center">
-         <h1 data-template-id="print-title" class="canva-text font-bold text-xl"></h1>
+         <h1 data-template-id="print-title" class="canva-text font-bold text-xl" style="font-family:'Noto Serif TC',serif;">小學數學教學資源</h1>
          <p id="printHeaderTitle" class="mt-1 text-sm text-slate-600"></p>
         </div>
-        <div class="mt-4 flex justify-between gap-3 text-xs font-medium"><span>班別：______班</span> <span>姓名：________________</span> <span>座號：_____</span> <span>日期：____________</span>
+        <div class="mt-4 flex justify-between gap-3 text-xs font-medium">
+         <span>班別：______班</span>
+         <span>姓名：________________</span>
+         <span>座號：_____</span>
+         <span>日期：____________</span>
         </div>
        </div>
+
        <div id="outputWrapper" class="flex-1 p-5 sm:p-7">
         <div id="loadingIndicator" class="hidden py-24 text-center" aria-live="polite">
-         <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent"></div>
-         <p data-template-id="loading-text" class="canva-text text-xs text-slate-500 mt-3 font-medium"></p>
+         <div class="loading-ring inline-block animate-spin rounded-full h-8 w-8 border-4 border-teal-700 border-t-transparent"></div>
+         <p data-template-id="loading-text" class="canva-text text-xs text-slate-500 mt-3 font-medium">正在整理教案、工作紙與反思筆記…</p>
         </div>
-        <div id="contentDisplay" class="md-zone space-y-6" aria-live="polite"></div>
+        <div id="contentDisplay" class="md-zone space-y-2" aria-live="polite"></div>
        </div>
       </article>
      </section>
     </div>
    </main>
-   <div id="toast" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2.5 text-xs text-white shadow-lg opacity-0 translate-y-2 pointer-events-none transition-all duration-200" role="status" aria-live="polite"><i data-lucide="circle-check" class="w-4 h-4 text-emerald-400"></i> <span id="toastMsg"></span>
+
+   <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 sm:left-auto sm:right-5 sm:translate-x-0 z-50 flex items-center gap-2 rounded-xl bg-[#13263a] px-4 py-2.5 text-xs text-white shadow-lg opacity-0 translate-y-2 pointer-events-none transition-all duration-200 max-w-[90vw]" role="status" aria-live="polite">
+    <i data-lucide="circle-check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg"></span>
    </div>
   </div>
+
   <script>
     const SYLLABUS = {
       P1: ["認識1至20", "2至10的分解和合成", "基本加法", "基本減法", "個位和十位", "認識21至100", "加法(一)", "減法", "香港的硬幣", "認識平面圖形", "厘米"],
@@ -391,8 +562,8 @@
     }
 
     function updateMeta() {
-      els.currentTopicLabel.textContent = `${state.grade} 數學科 ・ ${state.topic} ・ ${state.duration}分鐘教案`;
-      els.printHeaderTitle.textContent = `年級：${state.grade} ｜ 課題：${state.topic} ｜ 課時：${state.duration}分鐘`;
+      els.currentTopicLabel.textContent = `${state.grade} ・ ${state.topic} ・ ${state.duration} 分鐘`;
+      els.printHeaderTitle.textContent = `年級：${state.grade} ｜ 課題：${state.topic} ｜ 課時：${state.duration} 分鐘`;
     }
 
     function getCircleModules(duration) {
@@ -401,16 +572,18 @@
           <h2>二、詳細教學計劃（30 分鐘緊湊單堂課）</h2>
           <h3>教學目標</h3>
           <ol>
-            <li>區分圓周的長度概念與圓面積的平面概念。</li>
-            <li>掌握半圓周界必須「弧長加直徑」的規則。</li>
-            <li>能由圓周逆向求出半徑，再計算圓面積。</li>
+            <li>區分圓周（長度）與圓面積（平面）的概念與單位。</li>
+            <li>掌握半圓周界必須「弧長加直徑」的完整邊界規則。</li>
+            <li>能由圓周逆向求出半徑，再計算圓面積（C → r → A）。</li>
           </ol>
+          <h3>先備知識</h3>
+          <p>直徑與半徑關係、π 的意義、長方形面積、單位換算（cm / m）。</p>
           ${lessonTable([
-            ["00–03 分鐘", "生活問題速問", "圓形時鐘外圍貼彩帶與鐘面塗色，分別量甚麼？", "辨別圓周與面積。"],
-            ["03–11 分鐘", "公式算理提煉", "圓周 C = πd = 2πr；面積 A = πr²。", "比較直徑、半徑與單位。"],
+            ["00–03 分鐘", "生活問題速問", "圓形時鐘外圍貼彩帶與鐘面塗色，分別量甚麼？", "口答並辨別圓周與面積。"],
+            ["03–11 分鐘", "公式算理提煉", "圓周 C = πd = 2πr；面積 A = πr²。比較單位。", "在公式卡上標記「長度／平面」。"],
             ["11–19 分鐘", "描邊法破解半圓周界", "手指沿半圓外圍走一圈，還缺哪條邊？", "指出弧長外必須加上直徑。"],
             ["19–26 分鐘", "分層快練", "已知 C = 62.8cm，如何求面積？", "完成 C → r → A 逆向路徑。"],
-            ["26–30 分鐘", "總結與檢核", "半圓周界最易遺漏甚麼？", "口答並記錄易錯點。"]
+            ["26–30 分鐘", "總結與檢核", "半圓周界最易遺漏甚麼？", "口答並記錄個人易錯點。"]
           ])}
           <h3>板書設計</h3>
           <div class="reflection-card">課題：圓周與圓面積
@@ -418,7 +591,8 @@
 圓面積（平面）：A = πr²
 
 ★ 半圓周界 = 半圓弧長 + 直徑
-★ 逆向步驟：圓周 C → 半徑 r → 面積 A</div>`
+★ 逆向步驟：圓周 C → 半徑 r → 面積 A
+★ 驗算：單位是否一致？給的是半徑還是直徑？</div>`
         : `
           <h2>二、詳細教學計劃（60 分鐘深入探究連堂課）</h2>
           <h3>教學目標</h3>
@@ -428,13 +602,15 @@
             <li>熟練逆向運算與割補法解題。</li>
             <li>透過小組遊戲提升數學溝通與除錯能力。</li>
           </ol>
+          <h3>先備知識</h3>
+          <p>圓周公式、面積單位、正方形／長方形面積、分數與小數計算。</p>
           ${lessonTable([
-            ["00–08 分鐘", "情境與舊知連結", "圍欄與鋪草皮分別要計算甚麼？", "區分一維與二維量。"],
+            ["00–08 分鐘", "情境與舊知連結", "圍欄與鋪草皮分別要計算甚麼？", "區分一維與二維量，並舉生活例子。"],
             ["08–22 分鐘", "動手推導公式", "剪拼圓形後，近似長方形的長與闊是甚麼？", "以剪拼理解 A = πr²。"],
-            ["22–34 分鐘", "描邊與逆向解題", "半圓的封閉邊界包括甚麼？", "畫出 C → r → A 路徑。"],
+            ["22–34 分鐘", "描邊與逆向解題", "半圓的封閉邊界包括甚麼？", "畫出 C → r → A 路徑並互評。"],
             ["34–44 分鐘", "小組互動遊戲", "每條外圍邊界都有被算到嗎？", "進行公式快拍手及周界巡邏。"],
             ["44–54 分鐘", "分層工作紙", "可用哪兩個圖形相減？", "完成 A、B、C 級題目。"],
-            ["54–60 分鐘", "展示與反思", "今天最容易跌入的陷阱是甚麼？", "分享策略及完成反思。"]
+            ["54–60 分鐘", "展示與反思", "今天最容易跌入的陷阱是甚麼？", "分享策略及完成反思筆記。"]
           ])}
           <h3>板書設計</h3>
           <div class="reflection-card">課題：圓周與圓面積
@@ -450,10 +626,12 @@ A = πr²
         mod1: `
           <section>
             <h2>一、課題難點診斷與認知障礙分析</h2>
+            <p>本課題常見錯誤多來自「長度／面積混淆」與「半圓邊界不完整」。建議課堂先用描邊法建立直覺，再進入公式。</p>
             ${diagnosticTable([
-              ["公式混淆", "計算圓周時誤用半徑，或計算面積時直接把直徑平方。", "比較「一維長度」與「二維面積」，配合公式卡分類。"],
+              ["公式混淆", "計算圓周時誤用半徑，或計算面積時直接把直徑平方。", "比較「一維長度」與「二維面積」，用雙色公式卡分類練習。"],
               ["半圓周界漏加直徑", "只計算半圓弧長，遺漏直徑底邊。", "運用手指描邊法，強調封閉圖形的完整邊界。"],
-              ["逆向運算卡關", "已知圓周時，未能先求半徑再求面積。", "以 C → r → A 箭咀圖建立兩步運算支架。"]
+              ["逆向運算卡關", "已知圓周時，未能先求半徑再求面積。", "以 C → r → A 箭咀圖建立兩步運算支架。"],
+              ["π 取值不一致", "同一題混用 3.14 與 22/7，或忘記題目指定。", "審題時先圈出 π 取值，並在答案旁標示所用 π。"]
             ])}
           </section>`,
         mod2: `<section>${teachingPlan}</section>`,
@@ -461,27 +639,31 @@ A = πr²
           <section>
             <h2>三、鞏固遊戲設計與生成指令</h2>
             <h3>遊戲 1：公式快拍手</h3>
-            <p>雙人對戰，教師展示條件卡，例如「半徑 3cm，求圓周」，學生快速拍下正確公式卡。可用來檢核圓周公式與面積公式的辨別能力。</p>
+            <p>雙人對戰，教師展示條件卡（例如「半徑 3cm，求圓周」），學生快速拍下正確公式卡。用來檢核圓周與面積公式的辨別能力。</p>
             <h3>遊戲 2：周界巡邏員</h3>
-            <p>投影半圓、扇形或跑道圖形，學生以彩筆沿完整外圍描邊，再寫出每段邊界對應的運算式。</p>
+            <p>投影半圓、扇形或跑道圖形，學生以彩筆沿完整外圍描邊，再寫出每段邊界對應的運算式，互相檢查有否漏邊。</p>
+            <h3>遊戲 3：陷阱偵探（選用）</h3>
+            <p>展示含錯誤步驟的解法（如半圓漏加直徑），小組找出錯處、說出成因，並重寫正確算式。</p>
             ${promptBox("prompt-circle", `請為香港小學六年級數學課題「圓周與圓面積」設計 5 題互動選擇題：
 1. 2 題辨別圓周公式與圓面積公式
 2. 2 題半圓周界陷阱題，必須檢查是否加上直徑
 3. 1 題已知圓周逆求半徑及面積
-每題提供 A、B、C、D 四個選項，標示答案及一句易錯提示。`)}
+每題提供 A、B、C、D 四個選項，標示答案及一句易錯提示。使用香港小學繁體中文數學術語。`)}
           </section>`,
         mod4: `
           <section>
             <h2>四、分層學習工作紙（π 取 3.14 或 22/7）</h2>
+            <p>A 級鞏固公式；B 級處理半圓與逆向；C 級結合複合圖形。可按能力分組或全班分層選題。</p>
             <h3>A 初階基本題</h3>
-            ${question("1. 一個圓形花壇的半徑是 5m。求圓周及面積。", "圓周 = 2 × 3.14 × 5 = 31.4m；面積 = 3.14 × 5 × 5 = 78.5m²。")}
-            ${question("2. 一個圓形杯墊的直徑是 14cm。求圓周及面積。（π 取 22/7）", "半徑 = 14 ÷ 2 = 7cm；圓周 = 44cm；面積 = 154cm²。")}
+            ${question("1. 一個圓形花壇的半徑是 5m。求圓周及面積。（π 取 3.14）", "圓周 = 2 × 3.14 × 5 = 31.4m；面積 = 3.14 × 5 × 5 = 78.5m²。")}
+            ${question("2. 一個圓形杯墊的直徑是 14cm。求圓周及面積。（π 取 22/7）", "半徑 = 14 ÷ 2 = 7cm；圓周 = 2 × 22/7 × 7 = 44cm；面積 = 22/7 × 7 × 7 = 154cm²。")}
             <h3>B 中階進階題</h3>
             ${question("3. 一個半徑為 7cm 的半圓形紙片，求它的周界。（π 取 22/7）", "直徑 = 14cm；半圓弧長 = 22cm；周界 = 22 + 14 = 36cm。")}
-            ${question("4. 一條長 88cm 的鐵絲剛好圍成一個圓形。求圓面積。（π 取 22/7）", "直徑 = 88 ÷ (22/7) = 28cm；半徑 = 14cm；面積 = 616cm²。")}
-            ${question("5. 小聰以 3.14 × (10 ÷ 2) × (10 ÷ 2) 計算直徑 10cm 的半圓面積。找出錯誤。", "該算式計算的是整圓面積 78.5cm²，半圓面積應為 78.5 ÷ 2 = 39.25cm²。")}
+            ${question("4. 一條長 88cm 的鐵絲剛好圍成一個圓形。求圓面積。（π 取 22/7）", "直徑 = 88 ÷ (22/7) = 28cm；半徑 = 14cm；面積 = 22/7 × 14 × 14 = 616cm²。")}
+            ${question("5. 小聰以 3.14 × (10 ÷ 2) × (10 ÷ 2) 計算直徑 10cm 的半圓面積。找出錯誤。", "該算式計算的是整圓面積 78.5cm²；半圓面積應為 78.5 ÷ 2 = 39.25cm²。")}
             <h3>C 高階思考題</h3>
-            ${question("6. 邊長 20cm 的正方形內有一個最大內切圓。求四角陰影面積。", "正方形面積 = 400cm²；圓面積 = 3.14 × 10 × 10 = 314cm²；陰影面積 = 86cm²。")}
+            ${question("6. 邊長 20cm 的正方形內有一個最大內切圓。求四角陰影面積。（π 取 3.14）", "正方形面積 = 400cm²；圓面積 = 3.14 × 10 × 10 = 314cm²；陰影面積 = 400 − 314 = 86cm²。")}
+            ${question("7. 一個半圓的周界是 36cm（π 取 22/7）。求半圓面積。", "設直徑為 d：πd/2 + d = 36 ⇒ d(π/2 + 1) = 36 ⇒ d(11/7 + 1) = 36 ⇒ d(18/7) = 36 ⇒ d = 14cm；半徑 = 7cm；半圓面積 = ½ × 22/7 × 7 × 7 = 77cm²。")}
           </section>`,
         mod5: `
           <section>
@@ -496,8 +678,12 @@ A = πr²
 [　] 半圓周界有加上直徑嗎？
 [　] 題目給的是直徑還是半徑？
 [　] 已知圓周時，有先求半徑嗎？
+[　] π 取值有跟題目一致嗎？
 
 3. 我今天最需要記住的策略：
+________________________________________________
+
+4. 我想再練習的題型：
 ________________________________________________</div>
           </section>`
       };
@@ -512,16 +698,110 @@ ________________________________________________</div>
     }
 
     function question(questionText, answerText) {
-      return `<div class="mb-4"><p><strong>${questionText}</strong></p><div class="solution-box"><strong>【解答步驟】</strong><br>${answerText}</div><div class="student-space" aria-label="學生作答空間"></div></div>`;
+      return `<div class="question-block"><p><strong>${questionText}</strong></p><div class="solution-box"><strong>【解答步驟】</strong><br>${answerText}</div><div class="student-space" aria-label="學生作答空間"></div></div>`;
     }
 
     function promptBox(id, text) {
-      return `<div class="prompt-box"><button type="button" class="prompt-copy control-button rounded bg-blue-600 px-2 py-1 text-[11px] font-semibold text-white hover:bg-blue-500" data-copy-target="${id}">複製指令</button><div id="${id}">${formatText(text)}</div></div>`;
+      return `<div class="prompt-box"><button type="button" class="prompt-copy control-button rounded-md bg-teal-600 px-2.5 py-1 text-[11px] font-semibold text-white hover:bg-teal-500" data-copy-target="${id}">複製指令</button><div id="${id}">${formatText(text)}</div></div>`;
+    }
+
+    function topicHints(topic) {
+      const map = {
+        "異分母分數加法": ["先通分再相加", "分母不同不可直接加分子", "結果要約簡"],
+        "異分母分數減法": ["先通分再相減", "注意被減數與減數次序", "結果約簡並檢查單位"],
+        "百分數的應用": ["先判斷求部分、全部或百分率", "百分數 ↔ 小數／分數互換", "驗算：答案是否合乎情境"],
+        "速率": ["速率 = 路程 ÷ 時間", "單位要一致（km/h、m/s）", "可畫行程圖輔助"],
+        "因數": ["因數成對出現", "不要漏 1 和本身", "可用短除法系統列出"],
+        "倍數": ["倍數可由乘法生成", "注意「最少／最大」關鍵詞", "與公倍數概念銜接"]
+      };
+      return map[topic] || ["審題抓條件", "列式重算理", "驗算防陷阱"];
+    }
+
+    function topicWorksheet(topic, topicSafe) {
+      const packs = {
+        "異分母分數加法": {
+          intro: "A 級練習通分；B 級處理約簡與情境；C 級比較不同通分策略。",
+          blocks: [
+            ["A 初階基本題", [
+              ["1. 計算：1/2 + 1/3。", "通分：1/2 = 3/6，1/3 = 2/6；3/6 + 2/6 = 5/6。"],
+              ["2. 計算：2/5 + 1/4，並約簡。", "通分：2/5 = 8/20，1/4 = 5/20；8/20 + 5/20 = 13/20。"]
+            ]],
+            ["B 中階進階題", [
+              ["3. 小明吃了披薩的 1/4，小華吃了 2/5。他們一共吃了多少？", "1/4 + 2/5 = 5/20 + 8/20 = 13/20。"],
+              ["4. 已知 3/8 + □ = 7/8，求 □。", "□ = 7/8 − 3/8 = 4/8 = 1/2。"],
+              ["5. 有人把 1/3 + 1/6 算成 2/9。指出錯誤並訂正。", "錯誤：直接加分子與分母。正解：1/3 = 2/6；2/6 + 1/6 = 3/6 = 1/2。"]
+            ]],
+            ["C 高階思考題", [
+              ["6. 用兩種方法計算 1/2 + 1/3 + 1/6，並比較哪一種較簡潔。", "方法一逐步通分；方法二先通分至 6：3/6 + 2/6 + 1/6 = 1。一次通分較簡潔。"]
+            ]]
+          ]
+        },
+        "百分數的應用": {
+          intro: "A 級練習百分數換算；B 級求部分／全部；C 級處理連續變化。",
+          blocks: [
+            ["A 初階基本題", [
+              ["1. 把 25%、40%、12.5% 分別寫成分數（最簡）及小數。", "25% = 1/4 = 0.25；40% = 2/5 = 0.4；12.5% = 1/8 = 0.125。"],
+              ["2. 求 80 的 35%。", "80 × 35% = 80 × 0.35 = 28。"]
+            ]],
+            ["B 中階進階題", [
+              ["3. 一件原價 $240 的外套八折出售，售價多少？", "售價 = 240 × 80% = 192 元。"],
+              ["4. 小美答對 18 題，佔全卷 75%。全卷共有多少題？", "18 ÷ 75% = 18 ÷ 0.75 = 24 題。"],
+              ["5. 有人把「加價 20% 後再九折」理解成「減 10%」。說明為何不正確。", "240 → 288 → 259.2，不是直接 ×90%。連續百分比要逐步計算。"]
+            ]],
+            ["C 高階思考題", [
+              ["6. 原價 $500 的貨品，先加價 20%，再減價 20%。最終售價是多少？比原價多還是少？", "500 × 1.2 = 600；600 × 0.8 = 480。最終比原價少 $20。"]
+            ]]
+          ]
+        },
+        "速率": {
+          intro: "A 級套用公式；B 級處理單位與逆向；C 級比較行程。",
+          blocks: [
+            ["A 初階基本題", [
+              ["1. 一輛巴士 2 小時行駛 120 km。求速率。", "速率 = 120 ÷ 2 = 60 km/h。"],
+              ["2. 速率 5 m/s，行走 3 分鐘，路程多少米？", "3 分鐘 = 180 秒；路程 = 5 × 180 = 900 m。"]
+            ]],
+            ["B 中階進階題", [
+              ["3. 小明以 4 km/h 步行 1.5 小時，走了多少公里？", "路程 = 4 × 1.5 = 6 km。"],
+              ["4. 路程 90 km，速率 45 km/h，需時多少？", "時間 = 90 ÷ 45 = 2 小時。"],
+              ["5. 把 72 km/h 換成 m/s。", "72 × 1000 ÷ 3600 = 20 m/s。"]
+            ]],
+            ["C 高階思考題", [
+              ["6. A、B 兩地相距 180 km。甲車 60 km/h，乙車 45 km/h，同時相向而行，多久相遇？", "相對速率 = 105 km/h；時間 = 180 ÷ 105 = 12/7 小時（約 1 小時 43 分）。"]
+            ]]
+          ]
+        }
+      };
+
+      const pack = packs[topic];
+      if (!pack) {
+        return `
+            <p>A 級確認定義與基本運算；B 級加入情境與逆向；C 級要求多策略比較。</p>
+            <h3>A 初階基本題</h3>
+            ${question(`1. 請用自己的話說出「${topicSafe}」的核心定義，並列出主要計算步驟。`, "依課本標準定義，寫出關鍵公式、性質或操作流程，步驟不少於三點。")}
+            ${question(`2. 選擇一組標準數值，計算「${topicSafe}」的結果，並標示單位。`, "列出完整橫式，按步驟計算，最後檢查單位與約簡。")}
+            <h3>B 中階進階題</h3>
+            ${question(`3. 設計一道與「${topicSafe}」有關的生活情境題，並列式求解。`, "先列出已知及未知條件，再完成計算與驗算。")}
+            ${question(`4. 已知結果，反求「${topicSafe}」的原始條件。`, "運用逆向思維、關係式或簡易方程求解，並說明每一步理由。")}
+            ${question(`5. 指出一個與「${topicSafe}」有關的常見解題錯誤，並說明正確做法。`, "圈出錯誤步驟，補回遺漏條件或重新列式，寫出一句防錯提醒。")}
+            <h3>C 高階思考題</h3>
+            ${question(`6. 設計一題結合多個條件的「${topicSafe}」應用題，並嘗試使用兩種方法解答，比較優劣。`, "可使用圖解、轉化法、割補法或方程法；說明哪種方法更適合今天的課題。")}
+        `;
+      }
+
+      return `
+            <p>${pack.intro}</p>
+            ${pack.blocks.map(([heading, items]) => `
+              <h3>${heading}</h3>
+              ${items.map(([q, a]) => question(q, a)).join("")}
+            `).join("")}
+      `;
     }
 
     function buildUniversalPackage(grade, topic, duration) {
       const durationLabel = duration === 30 ? "緊湊單堂課" : "深入連堂課";
       const topicSafe = escapeHtml(topic);
+      const hints = topicHints(topic);
+      const hintLine = hints.map((h, i) => `${i + 1}. ${escapeHtml(h)}`).join("\n");
 
       const paceRows = duration === 30
         ? [
@@ -544,10 +824,11 @@ ________________________________________________</div>
         mod1: `
           <section>
             <h2>一、課題難點診斷與認知障礙分析</h2>
+            <p>針對「${topicSafe}」，建議先診斷學生的迷思概念，再設計支架與錯例對照。</p>
             ${diagnosticTable([
-              ["核心概念模糊", `對「${topicSafe}」的特徵或運算法則理解不透，容易死套公式。`, "以教具、圖像及具體例子建立心智模型。"],
-              ["步驟與符號轉換", "運算步驟較多時容易跳步、漏寫單位或忘記化簡。", "提供口訣及結構化解題框架。"],
-              ["情境建模與逆向推論", "文字題中未能分辨已知與未知條件。", "強化畫圖、列關係式及驗算策略。"]
+              ["核心概念模糊", `對「${topicSafe}」的特徵或運算法則理解不透，容易死套公式。`, `以教具、圖像及具體例子建立心智模型；口訣聚焦：${escapeHtml(hints[0])}。`],
+              ["步驟與符號轉換", "運算步驟較多時容易跳步、漏寫單位或忘記化簡。", `提供結構化解題框架：${escapeHtml(hints[1])}。`],
+              ["情境建模與逆向推論", "文字題中未能分辨已知與未知條件。", `強化畫圖、列關係式及驗算：${escapeHtml(hints[2])}。`]
             ])}
           </section>`,
         mod2: `
@@ -559,6 +840,12 @@ ________________________________________________</div>
               <li>掌握標準解題步驟，能準確處理基礎情境題。</li>
               <li>建立自查與驗算習慣，減少常見錯誤。</li>
             </ol>
+            <h3>課堂關鍵提醒</h3>
+            <ul>
+              <li>${escapeHtml(hints[0])}</li>
+              <li>${escapeHtml(hints[1])}</li>
+              <li>${escapeHtml(hints[2])}</li>
+            </ul>
             ${lessonTable(paceRows)}
             <h3>板書設計</h3>
             <div class="reflection-card">課題：${topicSafe}
@@ -568,7 +855,8 @@ ________________________________________________</div>
    ② 列式重算理
    ③ 驗算防陷阱
 
-★ 易錯提示：留意單位、步驟及逆向推算。</div>
+★ 今日提醒：
+${hintLine}</div>
           </section>`,
         mod3: `
           <section>
@@ -581,20 +869,12 @@ ________________________________________________</div>
 1. 概念題 2 題
 2. 計算應用題 2 題
 3. 改錯陷阱題 1 題
-請使用香港小學常用繁體中文數學術語，提供四個選項、正確答案及簡短解析。`)}
+請使用香港小學常用繁體中文數學術語，提供四個選項、正確答案及簡短解析。重點覆蓋：${hints.join("、")}。`)}
           </section>`,
         mod4: `
           <section>
             <h2>四、分層學習工作紙</h2>
-            <h3>A 初階基本題</h3>
-            ${question(`1. 請簡述「${topicSafe}」的核心定義與主要計算步驟。`, "依課本標準定義，寫出關鍵公式、性質或操作流程。")}
-            ${question(`2. 選擇一組標準數值，計算「${topicSafe}」的結果。`, "列出完整橫式，並按步驟計算及標示單位。")}
-            <h3>B 中階進階題</h3>
-            ${question(`3. 設計一道與「${topicSafe}」有關的生活情境題，並列式求解。`, "先列出已知及未知條件，再完成計算與驗算。")}
-            ${question(`4. 已知結果，反求「${topicSafe}」的原始條件。`, "運用逆向思維、關係式或簡易方程求解。")}
-            ${question("5. 指出一個常見解題錯誤，並說明正確做法。", "圈出錯誤步驟，補回遺漏條件或重新列式。")}
-            <h3>C 高階思考題</h3>
-            ${question(`6. 設計一題結合多個條件的「${topicSafe}」應用題，並嘗試使用兩種方法解答。`, "可使用圖解、轉化法、割補法或方程法，比較不同策略。")}
+            ${topicWorksheet(topic, topicSafe)}
           </section>`,
         mod5: `
           <section>
@@ -605,7 +885,8 @@ ________________________________________________</div>
 ________________________________________________
 
 2. 我的易錯警示燈：
-________________________________________________
+・${escapeHtml(hints[0])}
+・______________________________________________
 
 3. 我已掌握的解題步驟：
 ________________________________________________
@@ -632,18 +913,17 @@ ________________________________________________</div>
 
       els.contentDisplay.innerHTML = moduleKeys
         .map((key) => state.generated[key] || "")
-        .join('<div class="border-t border-slate-200"></div>');
+        .join('<div class="module-divider" aria-hidden="true"></div>');
 
       els.contentDisplay.classList.toggle("hide-answers", !state.showAnswers);
       updateSelectedButtons();
+      if (window.lucide) lucide.createIcons();
     }
 
     function setLoading(isLoading) {
       els.loadingIndicator.classList.toggle("hidden", !isLoading);
       els.contentDisplay.classList.toggle("hidden", isLoading);
       els.generateButton.disabled = isLoading;
-      els.generateButton.classList.toggle("opacity-70", isLoading);
-      els.generateButton.classList.toggle("cursor-wait", isLoading);
     }
 
     function generateResources({ showNotice = true } = {}) {
@@ -657,7 +937,7 @@ ________________________________________________</div>
         state.generated = getGeneratedPackage();
         setLoading(false);
         renderActiveView();
-        if (showNotice) showToast(`已更新為 ${state.duration} 分鐘教學資源。`);
+        if (showNotice) showToast(`已更新：${state.topic}（${state.duration} 分鐘）`);
       }, 180);
     }
 
@@ -762,7 +1042,7 @@ ________________________________________________</div>
       updateSelectedButtons();
       updateMeta();
       generateResources({ showNotice: false });
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
     });
   </script>
  </body>
